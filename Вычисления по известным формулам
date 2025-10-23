@@ -309,3 +309,229 @@ int main() {
 
     return 0;
 }
+1.41
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double e, f, g, h;
+
+    std::cout << "Введите значение e: ";
+    std::cin >> e;
+    std::cout << "Введите значение f: ";
+    std::cin >> f;
+    std::cout << "Введите значение g: ";
+    std::cin >> g;
+    std::cout << "Введите значение h: ";
+    std::cin >> h;
+
+    // Проверка на деление на ноль для функции a
+    if (f == 0) {
+        std::cout << "Ошибка: f не может быть равно 0 для вычисления a." << std::endl;
+        return 1;
+    }
+    // Проверка на деление на ноль для функции c
+    if (e * f - 3 == 0) {
+        std::cout << "Ошибка: e*f-3 не может быть равно 0 для вычисления c." << std::endl;
+        return 1;
+    }
+
+    double a = sqrt(pow(fabs(e - 3.0 / f), 3) + g);
+    double b = sin(e) + pow(cos(h), 2);
+    double c = (33.0 * g) / (e * f - 3.0);
+
+    std::cout << "Значение a: " << a << std::endl;
+    std::cout << "Значение b: " << b << std::endl;
+    std::cout << "Значение c: " << c << std::endl;
+
+    return 0;
+}
+1.42
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double e, f, g, h;
+
+    std::cout << "Введите значение e: ";
+    std::cin >> e;
+    std::cout << "Введите значение f: ";
+    std::cin >> f;
+    std::cout << "Введите значение g: ";
+    std::cin >> g;
+    std::cout << "Введите значение h: ";
+    std::cin >> h;
+
+    // Проверка на отрицательное значение под корнем для функции c
+    if (pow(g - h, 2) - 3 * sin(e) < 0) {
+        std::cout << "Ошибка: Выражение под корнем для c отрицательно." << std::endl;
+        return 1;
+    }
+
+    double a = (e + f / 2.0) / 3.0;
+    double b = fabs(pow(h, 2) - g);
+    double c = sqrt(pow(g - h, 2) - 3 * sin(e));
+
+    std::cout << "Значение a: " << a << std::endl;
+    std::cout << "Значение b: " << b << std::endl;
+    std::cout << "Значение c: " << c << std::endl;
+
+    return 0;
+}
+1.43
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double a, b;
+    std::cout << "Введите два числа: ";
+    std::cin >> a >> b;
+    
+    double abs_a = std::abs(a);
+    double abs_b = std::abs(b);
+    
+    double arithmetic_mean = (abs_a + abs_b) / 2.0;
+    double geometric_mean = std::sqrt(abs_a * abs_b);
+    
+    std::cout << "Среднее арифметическое модулей: " << arithmetic_mean << std::endl;
+    std::cout << "Среднее геометрическое модулей: " << geometric_mean << std::endl;
+    
+    return 0;
+}
+1.44
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double side1, side2;
+    std::cout << "Введите стороны прямоугольника: ";
+    std::cin >> side1 >> side2;
+    
+    double perimeter = 2 * (side1 + side2);
+    double diagonal = std::sqrt(side1 * side1 + side2 * side2);
+    
+    std::cout << "Периметр: " << perimeter << std::endl;
+    std::cout << "Длина диагонали: " << diagonal << std::endl;
+    
+    return 0;
+}
+1.45
+#include <iostream>
+
+int main() {
+    double a, b;
+    std::cout << "Введите два числа: ";
+    std::cin >> a >> b;
+    
+    double sum = a + b;
+    double difference = a - b;
+    double product = a * b;
+    
+    std::cout << "Сумма: " << sum << std::endl;
+    std::cout << "Разность: " << difference << std::endl;
+    std::cout << "Произведение: " << product << std::endl;
+    
+    if (b != 0) {
+        double quotient = a / b;
+        std::cout << "Частное: " << quotient << std::endl;
+    } else {
+        std::cout << "Деление на ноль невозможно." << std::endl;
+    }
+    
+    return 0;
+}
+1.46
+#include <iostream>
+
+int main() {
+    double length, width, height;
+    std::cout << "Введите длины сторон прямоугольного параллелепипеда: ";
+    std::cin >> length >> width >> height;
+    
+    double volume = length * width * height;
+    double lateral_surface_area = 2 * (length * height + width * height);
+    
+    std::cout << "Объем: " << volume << std::endl;
+    std::cout << "Площадь боковой поверхности: " << lateral_surface_area << std::endl;
+    
+    return 0;
+}
+1.47
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double x1, y1, x2, y2;
+    std::cout << "Введите координаты первой точки (x1 y1): ";
+    std::cin >> x1 >> y1;
+    std::cout << "Введите координаты второй точки (x2 y2): ";
+    std::cin >> x2 >> y2;
+    
+    double distance = std::sqrt(std::pow(x2 - x1, 2) + std::pow(y2 - y1, 2));
+    
+    std::cout << "Расстояние между точками: " << distance << std::endl;
+    
+    return 0;
+}
+1.48
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double base1, base2, height;
+    std::cout << "Введите основания и высоту равнобедренной трапеции: ";
+    std::cin >> base1 >> base2 >> height;
+    
+    double side_length = std::sqrt(std::pow((base1 - base2) / 2.0, 2) + std::pow(height, 2));
+    double perimeter = base1 + base2 + 2 * side_length;
+    
+    std::cout << "Периметр трапеции: " << perimeter << std::endl;
+    
+    return 0;
+}
+1.49
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double base1, base2, angle_degrees;
+    std::cout << "Введите основания и угол при большем основании (в градусах): ";
+    std::cin >> base1 >> base2 >> angle_degrees;
+    
+    double angle_radians = angle_degrees * M_PI / 180.0;
+    double height = std::abs(base1 - base2) / 2.0 * std::tan(angle_radians);
+    double area = (base1 + base2) / 2.0 * height;
+    
+    std::cout << "Площадь трапеции: " << area << std::endl;
+    
+    return 0;
+}
+1.50
+#include <iostream>
+#include <cmath>
+
+double calculate_distance(double x1, double y1, double x2, double y2) {
+    return std::sqrt(std::pow(x2 - x1, 2) + std::pow(y2 - y1, 2));
+}
+
+int main() {
+    double x1, y1, x2, y2, x3, y3;
+    std::cout << "Введите координаты вершин треугольника (x1 y1 x2 y2 x3 y3): ";
+    std::cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+    
+    double side_a = calculate_distance(x1, y1, x2, y2);
+    double side_b = calculate_distance(x2, y2, x3, y3);
+    double side_c = calculate_distance(x3, y3, x1, y1);
+    
+    double perimeter = side_a + side_b + side_c;
+    
+    double s = perimeter / 2.0;
+    double area = std::sqrt(s * (s - side_a) * (s - side_b) * (s - side_c));
+    
+    std::cout << "Периметр треугольника: " << perimeter << std::endl;
+    std::cout << "Площадь треугольника: " << area << std::endl;
+    
+    return 0;
+}
+
+1.51
