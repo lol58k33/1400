@@ -1,0 +1,251 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    // 1.22.а) y = 7x^2 - 3x + 6
+    double x_val_a;
+    std::cout << "Введите значение x для 1.22.а): ";
+    std::cin >> x_val_a;
+    double y_a = 7 * pow(x_val_a, 2) - 3 * x_val_a + 6;
+    std::cout << "Значение функции y = 7x^2 - 3x + 6 равно: " << y_a << std::endl;
+
+    // 1.22.б) x = 12a^2 + 7a - 16
+    double a_val_b;
+    std::cout << "Введите значение a для 1.22.б): ";
+    std::cin >> a_val_b;
+    double x_b = 12 * pow(a_val_b, 2) + 7 * a_val_b - 16;
+    std::cout << "Значение функции x = 12a^2 + 7a - 16 равно: " << x_b << std::endl;
+
+    return 0;
+}
+1.23
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double a_val;
+    std::cout << "Введите значение a для 1.23: ";
+    std::cin >> a_val;
+    double y = (pow(a_val, 2) + 10) / sqrt(pow(a_val, 2) + 1);
+    std::cout << "Значение функции y = (a^2+10)/sqrt(a^2+1) равно: " << y << std::endl;
+
+    return 0;
+}
+#include <iostream>
+#include <cmath>
+
+int main() {
+    // 1.24.а) x = sqrt((2a+sin|3a|)/3.56)
+    double a_val_a;
+    std::cout << "Введите значение a для 1.24.а): ";
+    std::cin >> a_val_a;
+    double x_a = sqrt((2 * a_val_a + sin(abs(3 * a_val_a))) / 3.56);
+    std::cout << "Значение функции x = sqrt((2a+sin|3a|)/3.56) равно: " << x_a << std::endl;
+
+    // 1.24.б) y = sin((3.2+sqrt(1+x))/|5x|)
+    double x_val_b;
+    std::cout << "Введите значение x для 1.24.б): ";
+    std::cin >> x_val_b;
+    double y_b = sin((3.2 + sqrt(1 + x_val_b)) / abs(5 * x_val_b));
+    std::cout << "Значение функции y = sin((3.2+sqrt(1+x))/|5x|) равно: " << y_b << std::endl;
+
+    return 0;
+}
+1.25
+#include <iostream>
+
+int main() {
+    double side;
+    std::cout << "Введите сторону квадрата для 1.25: ";
+    std::cin >> side;
+    double perimeter = 4 * side;
+    std::cout << "Периметр квадрата равен: " << perimeter << std::endl;
+
+    return 0;
+}
+1.26
+#include <iostream>
+
+int main() {
+    double radius;
+    std::cout << "Введите радиус окружности для 1.26: ";
+    std::cin >> radius;
+    double diameter = 2 * radius;
+    std::cout << "Диаметр окружности равен: " << diameter << std::endl;
+
+    return 0;
+}
+1.27
+#include <iostream>
+#include <cmath>
+
+int main() {
+    const double R = 6350.0; // Радиус Земли в км
+    double h; // Высота над Землей в км
+    std::cout << "Введите высоту над Землей в км для 1.27: ";
+    std::cin >> h;
+    double distance = sqrt(pow(R + h, 2) - pow(R, 2));
+    std::cout << "Расстояние до линии горизонта равно: " << distance << " км" << std::endl;
+
+    return 0;
+}
+1.28
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double edge;
+    std::cout << "Введите длину ребра куба для 1.28: ";
+    std::cin >> edge;
+    double volume = pow(edge, 3);
+    double lateral_surface_area = 4 * pow(edge, 2);
+    std::cout << "Объем куба равен: " << volume << std::endl;
+    std::cout << "Площадь его боковой поверхности равна: " << lateral_surface_area << std::endl;
+
+    return 0;
+}
+1.29
+#include <iostream>
+#include <cmath>
+
+int main() {
+    const double PI = 3.141592653589793;
+    double radius;
+    std::cout << "Введите радиус окружности для 1.29: ";
+    std::cin >> radius;
+    double circumference = 2 * PI * radius;
+    double area = PI * pow(radius, 2);
+    std::cout << "Длина окружности равна: " << circumference << std::endl;
+    std::cout << "Площадь круга равна: " << area << std::endl;
+
+    return 0;
+}
+1.30
+#include <iostream>
+#include <cmath>
+
+int main() {
+    // 1.30.а) z = x^3 - 2.5xy + 1.78x^2 - 2.5y + 1
+    double x_val_a, y_val_a;
+    std::cout << "Введите значения x и y для 1.30.а): ";
+    std::cin >> x_val_a >> y_val_a;
+    double z_a = pow(x_val_a, 3) - 2.5 * x_val_a * y_val_a + 1.78 * pow(x_val_a, 2) - 2.5 * y_val_a + 1;
+    std::cout << "Значение функции z = x^3 - 2.5xy + 1.78x^2 - 2.5y + 1 равно: " << z_a << std::endl;
+
+    // 1.30.б) x = 3.56a + b^3 - 5.8b^2 + 3.8a - 1.5
+    double a_val_b, b_val_b;
+    std::cout << "Введите значения a и b для 1.30.б): ";
+    std::cin >> a_val_b >> b_val_b;
+    double x_b = 3.56 * a_val_b + pow(b_val_b, 3) - 5.8 * pow(b_val_b, 2) + 3.8 * a_val_b - 1.5;
+    std::cout << "Значение функции x = 3.56a + b^3 - 5.8b^2 + 3.8a - 1.5 равно: " << x_b << std::endl;
+
+    return 0;
+}
+1.31
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int num1, num2;
+    std::cout << "Введите два целых числа для 1.31: ";
+    std::cin >> num1 >> num2;
+    double arithmetic_mean = (num1 + num2) / 2.0;
+    double geometric_mean = sqrt(num1 * num2);
+    std::cout << "Среднее арифметическое: " << arithmetic_mean << std::endl;
+    std::cout << "Среднее геометрическое: " << geometric_mean << std::endl;
+
+    return 0;
+}
+1.32
+#include <iostream>
+
+int main() {
+    double volume, mass;
+    std::cout << "Введите объем и массу тела для 1.32: ";
+    std::cin >> volume >> mass;
+    if (volume == 0) {
+        std::cout << "Объем не может быть равен нулю." << std::endl;
+        return 1;
+    }
+    double density = mass / volume;
+    std::cout << "Плотность материала тела: " << density << std::endl;
+
+    return 0;
+}
+1.33
+#include <iostream>
+
+int main() {
+    double population, area;
+    std::cout << "Введите количество жителей и площадь территории для 1.33: ";
+    std::cin >> population >> area;
+    if (area == 0) {
+        std::cout << "Площадь территории не может быть равна нулю." << std::endl;
+        return 1;
+    }
+    double population_density = population / area;
+    std::cout << "Плотность населения: " << population_density << std::endl;
+
+    return 0;
+}
+1.34
+#include <iostream>
+
+int main() {
+    double a, b;
+    std::cout << "Введите значения a и b для 1.34: ";
+    std::cin >> a >> b;
+    if (a == 0) {
+        std::cout << "Уравнение не является линейным. a не может быть равно 0." << std::endl;
+        return 1;
+    }
+    double x = -b / a;
+    std::cout << "Решение уравнения x = " << x << std::endl;
+
+    return 0;
+}
+1.35
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double cathetus1, cathetus2;
+    std::cout << "Введите длины двух катетов для 1.35: ";
+    std::cin >> cathetus1 >> cathetus2;
+    double hypotenuse = sqrt(pow(cathetus1, 2) + pow(cathetus2, 2));
+    std::cout << "Гипотенуза равна: " << hypotenuse << std::endl;
+
+    return 0;
+}
+1.36
+#include <iostream>
+#include <cmath>
+
+int main() {
+    const double PI = 3.141592653589793;
+    double outer_radius, inner_radius;
+    std::cout << "Введите внешний и внутренний радиусы для 1.36: ";
+    std::cin >> outer_radius >> inner_radius;
+    if (inner_radius >= outer_radius) {
+        std::cout << "Внутренний радиус должен быть меньше внешнего." << std::endl;
+        return 1;
+    }
+    double area = PI * (pow(outer_radius, 2) - pow(inner_radius, 2));
+    std::cout << "Площадь кольца равна: " << area << std::endl;
+
+    return 0;
+}
+1.37
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double cathetus1, cathetus2;
+    std::cout << "Введите длины двух катетов для 1.37: ";
+    std::cin >> cathetus1 >> cathetus2;
+    double hypotenuse = sqrt(pow(cathetus1, 2) + pow(cathetus2, 2));
+    double perimeter = cathetus1 + cathetus2 + hypotenuse;
+    std::cout << "Периметр треугольника равен: " << perimeter << std::endl;
+
+    return 0;
+}
