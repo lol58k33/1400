@@ -50,3 +50,83 @@ int main() {
     std::cout << 7 << "  " << 15 << "  " << 100 << std::endl;
     return 0;
 }
+1.7
+#include <iostream>
+
+int main() {
+    int num1, num2, num3;
+    std::cout << "Введите три числа: ";
+    std::cin >> num1 >> num2 >> num3;
+    std::cout << num1 << "  " << num2 << "  " << num3 << std::endl;
+    return 0;
+}
+1.8
+#include <iostream>
+
+int main() {
+    int num1, num2, num3, num4;
+    std::cout << "Введите четыре числа: ";
+    std::cin >> num1 >> num2 >> num3 >> num4;
+    std::cout << num1 << " " << num2 << " " << num3 << " " << num4 << std::endl;
+    return 0;
+}
+1.9
+#include <iostream>
+
+int main() {
+    std::cout << 50 << std::endl;
+    std::cout << 10 << std::endl;
+    return 0;
+}
+1.10
+#include <iostream>
+
+int main() {
+    std::cout << 5 << std::endl;
+    std::cout << 10 << std::endl;
+    std::cout << 21 << std::endl;
+    return 0;
+}
+1.11
+#include <iostream>
+
+int main() {
+    int num1, num2, num3, num4;
+    std::cout << "Введите четыре числа: ";
+    std::cin >> num1 >> num2 >> num3 >> num4;
+    std::cout << num1 << std::endl;
+    std::cout << num2 << std::endl;
+    std::cout << num3 << std::endl;
+    std::cout << num4 << std::endl;
+    return 0;
+}
+1.12
+#include <iostream>
+
+int main() {
+    int v, x, y;
+    std::cout << "Введите значения для v, x, y: ";
+    std::cin >> v >> x >> y;
+    std::cout << "5 10" << std::endl;
+    std::cout << "7 см" << std::endl;
+    std::cout << "100 г" << std::endl;
+    std::cout << "1949 " << v << std::endl;
+    std::cout << x << " 25" << std::endl;
+    std::cout << x << y << std::endl;
+    return 0;
+}
+1.13
+#include <iostream>
+
+int main() {
+    int a, b, x, y;
+    std::cout << "Введите значения для a, b, x, y: ";
+    std::cin >> a >> b >> x >> y;
+    std::cout << "2 кг" << std::endl;
+    std::cout << "13 17" << std::endl;
+    std::cout << a << " 1" << std::endl;
+    std::cout << "19 " << b << std::endl;
+    std::cout << x << y << std::endl;
+    std::cout << "5 " << y << std::endl;
+    return 0;
+}
