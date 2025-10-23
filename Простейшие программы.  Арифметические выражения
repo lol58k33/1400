@@ -156,3 +156,32 @@ a) (-1) / pow(x, 2)
 к) pow(2, pow(m, n))
 1.16
 a) \(\frac{a}{b\cdot c}\) б) \(\frac{a\cdot b}{c}\) в) \(\frac{a}{b}\cdot c\) г) \(a+\frac{b}{c}\) д) \(a+\frac{b}{c}\) е) \(a+\frac{b}{b}+c\) ж) \(a+\frac{b}{b}+c\) з) \(\frac{a}{\sin b}\) и) \(\frac{1}{2}\cdot a\cdot b\cdot \sin x\) к) \(2\cdot b\cdot c\cdot \frac{\cos \frac{a}{2}}{b}+c\) л) \(4\cdot R\cdot \sin \frac{a}{2}\cdot \sin \frac{b}{2}\cdot \sin \frac{c}{2}\) м) \(a\cdot x+\frac{b}{c}\cdot x+d\) н) \(2\cdot \sin \frac{a+b}{2}\cdot \cos \frac{a-b}{2}\) о) \(|\sin (-3|\frac{x}{2}|)|\)
+1.17
+а) sqrt(pow(x1, 2) + pow(x2, 2)) или sqrt(x1*x1 + x2*x2)
+б) x1*x2 + x1*x3 + x2*x3
+в) v0*t + a*pow(t, 2)/2 или v0*t + a*t*t/2
+г) m*pow(v, 2)/2 + m*g*h или m*v*v/2 + m*g*h
+д) 1/R1 + 1/R2
+е) m*g*cos(alpha)
+ж) 2*M_PI*R
+з) pow(b, 2) - 4*a*c или b*b - 4*a*c
+и) gamma * m1*m2 / pow(r, 2) или gamma * m1*m2 / (r*r)
+к) pow(I, 2)*R или I*I*R
+л) a*b*sin(c)
+м) sqrt(pow(a, 2) + pow(b, 2) - 2*a*b*cos(c)) или sqrt(a*a + b*b - 2*a*b*cos(c))
+н) (a*d + b*c) / (a*d)
+о) sqrt(1 - pow(sin(x), 2)) или sqrt(1 - sin(x)*sin(x))
+п) 1 / sqrt(a*pow(x, 2) + b*x + c) или 1 / sqrt(a*x*x + b*x + c)
+р) (sqrt(x+1) + sqrt(x-1)) / (2*sqrt(x))
+с) abs(x) + abs(x+1)
+т) abs(1-abs(x))
+1.18
+а) s сначала становится равным 5, затем 57.
+б) s сначала становится равным 6, затем s = -5.2 * 6 = -31.2, затем s = 0.
+в) s сначала становится равным -7.5, затем s = 2 * (-7.5) = -15.
+г) s сначала становится равным 45, затем -25, затем s = -25 + k. Значение k не определено, поэтому результат будет зависеть от него.
+
+а) 57
+б) 0
+в) -15
+г) -25 + k
