@@ -130,3 +130,29 @@ int main() {
     std::cout << "5 " << y << std::endl;
     return 0;
 }
+1.14
+a) 2 * x
+б) sin(x)
+в) pow(a, 2)
+г) sqrt(x)
+д) abs(n)
+е) 5 * cos(y)
+ж) -7.5 * pow(a, 2)
+з) 3 * sqrt(x)
+и) sin(alpha) * cos(beta) + cos(alpha) * sin(beta)
+к) a * sqrt(2 * b)
+л) 3 * sin(2 * alpha) * cos(3 * beta)
+м) -5 * sqrt(x + sqrt(y))
+1.15
+a) (-1) / pow(x, 2)
+б) a / (b * c)
+в) a / b * c
+г) (a + b) / 2
+д) 5.45 * (a + 2 * b) / (2 - a)
+е) (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a)
+ж) (-b + 1 / a) / (2 / c)
+з) 1 / (1 + (a + b) / 2)
+и) 1 / (1 + 1 / (2 + 1 / (2 + 3 / 5)))
+к) pow(2, pow(m, n))
+1.16
+a) \(\frac{a}{b\cdot c}\) б) \(\frac{a\cdot b}{c}\) в) \(\frac{a}{b}\cdot c\) г) \(a+\frac{b}{c}\) д) \(a+\frac{b}{c}\) е) \(a+\frac{b}{b}+c\) ж) \(a+\frac{b}{b}+c\) з) \(\frac{a}{\sin b}\) и) \(\frac{1}{2}\cdot a\cdot b\cdot \sin x\) к) \(2\cdot b\cdot c\cdot \frac{\cos \frac{a}{2}}{b}+c\) л) \(4\cdot R\cdot \sin \frac{a}{2}\cdot \sin \frac{b}{2}\cdot \sin \frac{c}{2}\) м) \(a\cdot x+\frac{b}{c}\cdot x+d\) н) \(2\cdot \sin \frac{a+b}{2}\cdot \cos \frac{a-b}{2}\) о) \(|\sin (-3|\frac{x}{2}|)|\)
