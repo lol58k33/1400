@@ -185,3 +185,63 @@ a) \(\frac{a}{b\cdot c}\) б) \(\frac{a\cdot b}{c}\) в) \(\frac{a}{b}\cdot c\) 
 б) 0
 в) -15
 г) -25 + k
+#include <iostream>
+int main() {
+    // 1.19.a)
+    std::cout << "1.19.a) " << std::endl;
+    int x_19a = 10;
+    x_19a = -10;
+    std::cout << "x = " << x_19a << std::endl;
+
+    // 1.19.б)
+    std::cout << "1.19.b) " << std::endl;
+    double x_19b = 17.5;
+    x_19b = -2 * x_19b;
+    std::cout << "x = " << x_19b << std::endl;
+
+    // 1.19.в)
+    std::cout << "1.19.v) " << std::endl;
+    int x_19v = 60;
+    x_19v = x_19v - 1;
+    x_19v = 0;
+    std::cout << "x = " << x_19v << std::endl;
+
+    // 1.19.г)
+    // Эта задача не может быть решена, так как переменная 'k' не определена.
+
+    // 1.20.a)
+    std::cout << "1.20.a) " << std::endl;
+    int s_20a = 14;
+    int k_20a = -3;
+    int d_20a = s_20a + 1;
+    s_20a = d_20a;
+    k_20a = 2 * s_20a;
+    std::cout << "s = " << s_20a << ", k = " << k_20a << std::endl;
+
+    // 1.20.б)
+    std::cout << "1.20.b) " << std::endl;
+    int s_20b = 0;
+    int k_20b = 30;
+    int d_20b = k_20b - 5;
+    s_20b = k_20b - 100;
+    k_20b = 2 * d_20b;
+    std::cout << "s = " << s_20b << ", k = " << k_20b << std::endl;
+
+    // 1.21.a)
+    std::cout << "1.21.a) " << std::endl;
+    double a_21a = 5.8;
+    double b_21a = -7.9;
+    b_21a = a_21a;
+    a_21a = b_21a;
+    std::cout << "a = " << a_21a << ", b = " << b_21a << std::endl;
+
+    // 1.21.б)
+    std::cout << "1.21.b) " << std::endl;
+    double a_21b = 0;
+    double b_21b = -9.99;
+    b_21b = a_21b;
+    a_21b = b_21b;
+    std::cout << "a = " << a_21b << ", b = " << b_21b << std::endl;
+
+    return 0;
+}
