@@ -1,0 +1,2208 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+const double PI = 3.14159265359;
+const double g = 9.8;
+
+void task4_1() {
+    cout << "\n4.1. y = sin(x) * x^2 при x <= 0, иначе y = 1 + 2*sin(x)" << endl;
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+    
+    double y;
+    if (x <= 0) {
+        y = sin(x) * x * x;
+    } else {
+        y = 1 + 2 * sin(x);
+    }
+    
+    cout << fixed << setprecision(4);
+    cout << "y = " << y << endl;
+}
+
+void task4_2() {
+    cout << "\n4.2. y = sin(x) * x^2 при x <= 0, иначе y = 1 + 2*sin(x)" << endl;
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+    
+    double y;
+    if (x <= 0) {
+        y = sin(x) * x * x;
+    } else {
+        y = 1 + 2 * sin(x);
+    }
+    
+    cout << fixed << setprecision(4);
+    cout << "y = " << y << endl;
+}
+
+void task4_3() {
+    cout << "\n4.3. Точка в области I или II (y <= 4, y >= 0)" << endl;
+    double x, y;
+    cout << "Введите координаты (x, y): ";
+    cin >> x >> y;
+    
+    if (y >= 0 && y <= 4) {
+        cout << "Точка в области I" << endl;
+    } else {
+        cout << "Точка в области II" << endl;
+    }
+}
+
+void task4_4() {
+    cout << "\n4.4. Точка в области I или II (y <= 3)" << endl;
+    double x, y;
+    cout << "Введите координаты (x, y): ";
+    cin >> x >> y;
+    
+    if (y <= 3) {
+        cout << "Точка в области I" << endl;
+    } else {
+        cout << "Точка в области II" << endl;
+    }
+}
+
+void task4_5a() {
+    cout << "\n4.5a. График функции (кусочно-линейная)" << endl;
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+    
+    double y;
+    if (x >= -3 && x <= 0) {
+        y = 2 + x;  // линия от (-3,−1) к (0,2)
+    } else if (x >= 0 && x <= 3) {
+        y = 2 - (2. 0/3.0) * x;  // линия от (0,2) к (3,0)
+    } else {
+        y = 0;  // вне диапазона
+    }
+    
+    cout << fixed << setprecision(2);
+    cout << "y = " << y << endl;
+}
+
+void task4_5b() {
+    cout << "\n4.5b. График функции" << endl;
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+    
+    double y;
+    if (x >= -3 && x <= 0) {
+        y = x;  // линия y = x
+    } else if (x >= 0 && x <= 3) {
+        y = -x;  // линия y = -x
+    } else {
+        y = 0;
+    }
+    
+    cout << fixed << setprecision(2);
+    cout << "y = " << y << endl;
+}
+
+void task4_6() {
+    cout << "\n4.6. Сравнение двух чисел" << endl;
+    double a, b;
+    cout << "Введите два различных числа: ";
+    cin >> a >> b;
+    
+    cout << "a) Большее: " << (a > b ? a : b) << endl;
+    cout << "b) Меньшее: " << (a < b ? a : b) << endl;
+}
+
+void task4_7() {
+    cout << "\n4.7. Максимум и минимум двух чисел" << endl;
+    double a, b;
+    cout << "Введите два различных числа: ";
+    cin >> a >> b;
+    
+    double max_val = (a > b) ? a : b;
+    double min_val = (a < b) ? a : b;
+    
+    cout << "Максимум: " << max_val << endl;
+    cout << "Минимум:  " << min_val << endl;
+}
+
+void task4_8() {
+    cout << "\n4.8. Какое расстояние меньше (км или футы)" << endl;
+    double km, feet;
+    cout << "Введите расстояние в км:  ";
+    cin >> km;
+    cout << "Введите расстояние в футах: ";
+    cin >> feet;
+    
+    double feet_in_km = feet * 0.305 / 1000;
+    
+    if (km < feet_in_km) {
+        cout << "Меньше расстояние в км:  " << km << endl;
+    } else {
+        cout << "Меньше расстояние в футах: " << feet << " футов" << endl;
+    }
+}
+
+void task4_9() {
+    cout << "\n4.9. Какая скорость больше (км/ч или м/с)" << endl;
+    double kmh, ms;
+    cout << "Введите скорость в км/ч: ";
+    cin >> kmh;
+    cout << "Введите скорость в м/с: ";
+    cin >> ms;
+    
+    double ms_in_kmh = ms * 3.6;
+    
+    if (kmh > ms_in_kmh) {
+        cout << "Больше скорость в км/ч: " << kmh << endl;
+    } else {
+        cout << "Больше скорость в м/с: " << ms << endl;
+    }
+}
+
+void task4_10() {
+    cout << "\n4.10. Сравнение площадей круга и квадрата" << endl;
+    double r, a;
+    cout << "Введите радиус круга: ";
+    cin >> r;
+    cout << "Введите сторону квадрата: ";
+    cin >> a;
+    
+    double area_circle = PI * r * r;
+    double area_square = a * a;
+    
+    if (area_circle > area_square) {
+        cout << "Площадь круга больше (" << area_circle << " > " << area_square << ")" << endl;
+    } else {
+        cout << "Площадь квадрата больше (" << area_square << " > " << area_circle << ")" << endl;
+    }
+}
+
+void task4_11() {
+    cout << "\n4.11. Какой материал плотнее" << endl;
+    double V1, m1, V2, m2;
+    cout << "Введите объем и массу первого тела: ";
+    cin >> V1 >> m1;
+    cout << "Введите объем и массу второго тела:  ";
+    cin >> V2 >> m2;
+    
+    double rho1 = m1 / V1;
+    double rho2 = m2 / V2;
+    
+    if (rho1 > rho2) {
+        cout << "Первое тело плотнее (ρ = " << rho1 << ")" << endl;
+    } else {
+        cout << "Второе тело плотнее (ρ = " << rho2 << ")" << endl;
+    }
+}
+
+void task4_12() {
+    cout << "\n4.12. По какому участку меньший ток (I = U/R)" << endl;
+    double R1, U1, R2, U2;
+    cout << "Введите R1 и U1: ";
+    cin >> R1 >> U1;
+    cout << "Введите R2 и U2: ";
+    cin >> R2 >> U2;
+    
+    double I1 = U1 / R1;
+    double I2 = U2 / R2;
+    
+    if (I1 < I2) {
+        cout << "По первому участку меньший ток (I = " << I1 << ")" << endl;
+    } else {
+        cout << "По второму участку меньший ток (I = " << I2 << ")" << endl;
+    }
+}
+
+void task4_13() {
+    cout << "\n4.13. Имеет ли уравнение ax²+bx+c=0 вещественные корни" << endl;
+    double a, b, c;
+    cout << "Введите коэффициенты a, b, c (a ≠ 0): ";
+    cin >> a >> b >> c;
+    
+    double D = b * b - 4 * a * c;
+    
+    if (D >= 0) {
+        cout << "Уравнение имеет вещественные корни" << endl;
+    } else {
+        cout << "Уравнение не имеет вещественных корней" << endl;
+    }
+}
+
+void task4_14() {
+    cout << "\n4.14. Найти корни квадратного уравнения" << endl;
+    double a, b, c;
+    cout << "Введите коэффициенты a, b, c (a ≠ 0): ";
+    cin >> a >> b >> c;
+    
+    double D = b * b - 4 * a * c;
+    
+    if (D > 0) {
+        double x1 = (-b + sqrt(D)) / (2 * a);
+        double x2 = (-b - sqrt(D)) / (2 * a);
+        cout << fixed << setprecision(4);
+        cout << "Два корня: x1 = " << x1 << ", x2 = " << x2 << endl;
+    } else if (D == 0) {
+        double x = -b / (2 * a);
+        cout << fixed << setprecision(4);
+        cout << "Один корень: x = " << x << endl;
+    } else {
+        cout << "Вещественных корней нет" << endl;
+    }
+}
+
+void task4_15() {
+    cout << "\n4.15. Возраст человека (в полных годах)" << endl;
+    int year_birth, month_birth, year_now, month_now;
+    cout << "Введите год и месяц рождения: ";
+    cin >> year_birth >> month_birth;
+    cout << "Введите текущий год и месяц:  ";
+    cin >> year_now >> month_now;
+    
+    int age = year_now - year_birth;
+    if (month_now < month_birth) {
+        age--;
+    }
+    
+    cout << "Возраст:  " << age << " лет" << endl;
+}
+
+void task4_16() {
+    cout << "\n4.16. Круг и квадрат - уместятся ли друг в друге" << endl;
+    double S_circle, S_square;
+    cout << "Введите площадь круга и площадь квадрата: ";
+    cin >> S_circle >> S_square;
+    
+    // Радиус круга:  πr² = S_circle  =>  r = √(S_circle/π)
+    double r = sqrt(S_circle / PI);
+    // Сторона квадрата: a² = S_square  =>  a = √S_square
+    double a = sqrt(S_square);
+    
+    cout << "\na) Уместится ли круг в квадрате?" << endl;
+    if (2 * r <= a) {
+        cout << "   ДА, диаметр круга (" << 2*r << ") <= стороне квадрата (" << a << ")" << endl;
+    } else {
+        cout << "   НЕТ, диаметр круга (" << 2*r << ") > стороны квадрата (" << a << ")" << endl;
+    }
+    
+    cout << "\nb) Уместится ли квадрат в круге?" << endl;
+    double diagonal = a * sqrt(2);
+    if (diagonal <= 2 * r) {
+        cout << "   ДА, диагональ квадрата (" << diagonal << ") <= диаметру круга (" << 2*r << ")" << endl;
+    } else {
+        cout << "   НЕТ, диагональ квадрата (" << diagonal << ") > диаметра круга (" << 2*r << ")" << endl;
+    }
+}
+
+// ============================================
+// ЦЕЛОЧИСЛЕННАЯ АРИФМЕТИКА И УСЛОВНЫЙ ОПЕРАТОР (4.20 - 4.36)
+// ============================================
+
+void task4_20() {
+    cout << "\n4.20. Делится ли m на n нацело?" << endl;
+    int m, n;
+    cout << "Введите m и n: ";
+    cin >> m >> n;
+    
+    if (m % n == 0) {
+        cout << "Да, частное:  " << m / n << endl;
+    } else {
+        cout << m << " на " << n << " нацело не делится" << endl;
+    }
+}
+
+void task4_21() {
+    cout << "\n4.21. Является ли a делителем числа b?" << endl;
+    int a, b;
+    cout << "Введите a и b: ";
+    cin >> a >> b;
+    
+    if (b % a == 0) {
+        cout << "Да, " << a << " является делителем " << b << endl;
+    } else {
+        cout << "Нет, " << a << " не является делителем " << b << endl;
+    }
+}
+
+void task4_22() {
+    cout << "\n4.22. Проверка натурального числа" << endl;
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    cout << "a) Четное ли число?" << endl;
+    if (n % 2 == 0) {
+        cout << "   Да, число четное" << endl;
+    } else {
+        cout << "   Нет, число нечетное" << endl;
+    }
+    
+    cout << "b) Оканчивается ли на 7?" << endl;
+    if (n % 10 == 7) {
+        cout << "   Да, заканчивается на 7" << endl;
+    } else {
+        cout << "   Нет, не заканчивается на 7" << endl;
+    }
+}
+
+void task4_23() {
+    cout << "\n4.23. Двузначное число - сравнение цифр" << endl;
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    
+    int tens = n / 10;
+    int units = n % 10;
+    
+    cout << "a) Сравнение первой и второй цифр:" << endl;
+    if (tens > units) {
+        cout << "   Первая цифра больше (" << tens << " > " << units << ")" << endl;
+    } else if (tens < units) {
+        cout << "   Вторая цифра больше (" << units << " > " << tens << ")" << endl;
+    } else {
+        cout << "   Цифры равны" << endl;
+    }
+    
+    cout << "b) Одинаковы ли цифры?" << endl;
+    if (tens == units) {
+        cout << "   Да, цифры одинаковые" << endl;
+    } else {
+        cout << "   Н��т, цифры различны" << endl;
+    }
+}
+
+void task4_24() {
+    cout << "\n4.24. n² = 4(a³+b³)?" << endl;
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    
+    int a = n / 10;
+    int b = n % 10;
+    
+    int left = n * n;
+    int right = 4 * (a*a*a + b*b*b);
+    
+    cout << "n² = " << left << ", 4(a³+b³) = " << right << endl;
+    if (left == right) {
+        cout << "Ответ: ДА" << endl;
+    } else {
+        cout << "Ответ: НЕТ" << endl;
+    }
+}
+
+void task4_25() {
+    cout << "\n4.25. Двузначное число - проверка суммы цифр" << endl;
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    
+    int tens = n / 10;
+    int units = n % 10;
+    int sum = tens + units;
+    
+    cout << "a) Сумма цифр двузначная?" << endl;
+    if (sum >= 10 && sum <= 99) {
+        cout << "   Да, сумма = " << sum << endl;
+    } else {
+        cout << "   Нет, сумма = " << sum << endl;
+    }
+    
+    cout << "b) Сумма циф�� больше самого числа?" << endl;
+    if (sum > n) {
+        cout << "   Да, " << sum << " > " << n << endl;
+    } else {
+        cout << "   Нет, " << sum << " <= " << n << endl;
+    }
+}
+
+void task4_26() {
+    cout << "\n4.26. Двузначное число - делимость суммы цифр" << endl;
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    
+    int tens = n / 10;
+    int units = n % 10;
+    int sum = tens + units;
+    
+    cout << "a) Кратна ли сумма цифр трем?" << endl;
+    if (sum % 3 == 0) {
+        cout << "   Да, сумма " << sum << " кратна 3" << endl;
+    } else {
+        cout << "   Нет, сумма " << sum << " не кратна 3" << endl;
+    }
+    
+    cout << "b) Кратна ли сумма цифр числу a?" << endl;
+    if (sum % n == 0) {
+        cout << "   Да, сумма кратна " << n << endl;
+    } else {
+        cout << "   Нет, сумма не кратна " << n << endl;
+    }
+}
+
+void task4_27() {
+    cout << "\n4.27. Трехзначное число - палиндром?" << endl;
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+    
+    int first = n / 100;
+    int last = n % 10;
+    
+    if (first == last) {
+        cout << "Да, число палиндром" << endl;
+    } else {
+        cout << "Нет, число не палиндром" << endl;
+    }
+}
+
+void task4_28() {
+    cout << "\n4.28. Трехзначное число - сравнение цифр" << endl;
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+    
+    int first = n / 100;
+    int second = (n / 10) % 10;
+    int third = n % 10;
+    
+    cout << "a) Первая или последняя цифра больше?" << endl;
+    if (first > third) {
+        cout << "   Первая (" << first << ") больше" << endl;
+    } else {
+        cout << "   Последняя (" << third << ") больше" << endl;
+    }
+    
+    cout << "b) Первая или вторая цифра больше?" << endl;
+    if (first > second) {
+        cout << "   Первая (" << first << ") больше" << endl;
+    } else {
+        cout << "   Вторая (" << second << ") больше" << endl;
+    }
+    
+    cout << "c) Вторая или последняя цифра больше?" << endl;
+    if (second > third) {
+        cout << "   Вторая (" << second << ") больше" << endl;
+    } else {
+        cout << "   Пос��едняя (" << third << ") больше" << endl;
+    }
+}
+
+void task4_29() {
+    cout << "\n4.29. n² = a³ + b³ + c³?" << endl;
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+    
+    int a = n / 100;
+    int b = (n / 10) % 10;
+    int c = n % 10;
+    
+    int left = n * n;
+    int right = a*a*a + b*b*b + c*c*c;
+    
+    cout << "n² = " << left << ", a³+b³+c³ = " << right << endl;
+    if (left == right) {
+        cout << "Ответ:  ДА" << endl;
+    } else {
+        cout << "Ответ: НЕТ" << endl;
+    }
+}
+
+void task4_30() {
+    cout << "\n4.30. Трехзначное число - проверки" << endl;
+    int n;
+    cout << "Введите трехзначное число:  ";
+    cin >> n;
+    
+    int a = n / 100;
+    int b = (n / 10) % 10;
+    int c = n % 10;
+    int sum = a + b + c;
+    int product = a * b * c;
+    
+    cout << "a) Сумма цифр двузначная?" << endl;
+    if (sum >= 10 && sum <= 99) {
+        cout << "   Да, сумма = " << sum << endl;
+    } else {
+        cout << "   Нет, сумма = " << sum << endl;
+    }
+    
+    cout << "b) Произведение цифр трехзначное?" << endl;
+    if (product >= 100 && product <= 999) {
+        cout << "   Да, произведение = " << product << endl;
+    } else {
+        cout << "   Нет, произведение = " << product << endl;
+    }
+    
+    cout << "c) Произведение цифр больше числа?" << endl;
+    if (product > n) {
+        cout << "   Да, " << product << " > " << n << endl;
+    } else {
+        cout << "   Нет, " << product << " <= " << n << endl;
+    }
+    
+    cout << "d) Сумма цифр кратна 5?" << endl;
+    if (sum % 5 == 0) {
+        cout << "   Да, сумма кратна 5" << endl;
+    } else {
+        cout << "   Нет, сумма не кратна 5" << endl;
+    }
+    
+    cout << "e) Сумма цифр кратна числу?" << endl;
+    if (sum % n == 0) {
+        cout << "   Да, сумма кратна " << n << endl;
+    } else {
+        cout << "   Нет, сумма не кратна " << n << endl;
+    }
+}
+
+void task4_31() {
+    cout << "\n4.31. Трехзначное число - одинаковые цифры?" << endl;
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+    
+    int a = n / 100;
+    int b = (n / 10) % 10;
+    int c = n % 10;
+    
+    cout << "a) Все цифры одинаковые?" << endl;
+    if (a == b && b == c) {
+        cout << "   Да, все цифры равны " << a << endl;
+    } else {
+        cout << "   Нет, цифры не все одинаковые" << endl;
+    }
+    
+    cout << "b) Есть ли среди цифр одинаковые?" << endl;
+    if (a == b || b == c || a == c) {
+        cout << "   Да, есть одинаковые цифры" << endl;
+    } else {
+        cout << "   Нет, все цифры различны" << endl;
+    }
+}
+
+void task4_32() {
+    cout << "\n4.32. Четырехзначное число - проверки" << endl;
+    int n;
+    cout << "Введите четырехзначное число: ";
+    cin >> n;
+    
+    int d1 = n / 1000;
+    int d2 = (n / 100) % 10;
+    int d3 = (n / 10) % 10;
+    int d4 = n % 10;
+    
+    cout << "a) Сумма первых двух цифр = сумме последних двух?" << endl;
+    if (d1 + d2 == d3 + d4) {
+        cout << "   Да, " << d1+d2 << " = " << d3+d4 << endl;
+    } else {
+        cout << "   Нет, " << d1+d2 << " != " << d3+d4 << endl;
+    }
+    
+    cout << "b) Сумма цифр кратна 3?" << endl;
+    int sum = d1 + d2 + d3 + d4;
+    if (sum % 3 == 0) {
+        cout << "   Да, сумма = " << sum << " кратна 3" << endl;
+    } else {
+        cout << "   Нет, сумма = " << sum << " не кратна 3" << endl;
+    }
+    
+    cout << "c) Произведение цифр кратно 4?" << endl;
+    int product = d1 * d2 * d3 * d4;
+    if (product % 4 == 0) {
+        cout << "   Да, произведение кратно 4" << endl;
+    } else {
+        cout << "   Нет, произведение не кратно 4" << endl;
+    }
+    
+    cout << "d) Произведение цифр кратно числу?" << endl;
+    if (product % n == 0) {
+        cout << "   Да, произведение кратно " << n << endl;
+    } else {
+        cout << "   Нет, произведение не кратно " << n << endl;
+    }
+}
+
+void task4_33() {
+    cout << "\n4.33. Натуральное число - четность последней цифры" << endl;
+    int n;
+    cout << "Введите натуральное число: ";
+    cin >> n;
+    
+    int last_digit = n % 10;
+    
+    cout << "a) Заканчивается на четную цифру?" << endl;
+    if (last_digit % 2 == 0) {
+        cout << "   Да, " << last_digit << " — четная" << endl;
+    } else {
+        cout << "   Нет, " << last_digit << " — нечетная" << endl;
+    }
+    
+    cout << "b) Заканчивается на нечетную цифру?" << endl;
+    if (last_digit % 2 != 0) {
+        cout << "   Да, " << last_digit << " — нечетная" << endl;
+    } else {
+        cout << "   Нет, " << last_digit << " — четная" << endl;
+    }
+}
+
+void task4_34() {
+    cout << "\n4.34. Является ли a делителем b и наоборот?" << endl;
+    int a, b;
+    cout << "Введите a и b: ";
+    cin >> a >> b;
+    
+    bool a_divides_b = (b % a == 0);
+    bool b_divides_a = (a % b == 0);
+    
+    cout << "a делит b:  " << (a_divides_b ? "ДА" : "НЕТ") << endl;
+    cout << "b делит a:  " << (b_divides_a ? "ДА" :  "НЕТ") << endl;
+}
+
+void task4_36() {
+    cout << "\n4.36. Светофор для пешеходов" << endl;
+    double t;
+    cout << "Введите время в минутах (с начала часа): ";
+    cin >> t;
+    
+    int minute = (int)t % 10;  // Цикл 10 минут (3+2+3+2)
+    
+    if (minute < 3) {
+        cout << "Горит ЗЕЛЕНЫЙ сигнал" << endl;
+    } else if (minute < 5) {
+        cout << "Горит КРАСНЫЙ сигнал" << endl;
+    } else if (minute < 8) {
+        cout << "Горит ЗЕЛЕНЫЙ сигнал" << endl;
+    } else {
+        cout << "Горит КРАСНЫЙ сигнал" << endl;
+    }
+}
+
+// ============================================
+// ИСПОЛЬЗОВАНИЕ СЛОЖНЫХ УСЛ��ВИЙ (4.37 - 4.69)
+// ============================================
+
+void task4_37() {
+    cout << "\n4.37. Число в интервале (-5, 3)?" << endl;
+    double x;
+    cout << "Введите число: ";
+    cin >> x;
+    
+    if (x > -5 && x < 3) {
+        cout << "Да, число принадлежит интервалу (-5, 3)" << endl;
+    } else {
+        cout << "Нет, число не принадлежит интервалу (-5, 3)" << endl;
+    }
+}
+
+void task4_38() {
+    cout << "\n4.38. Точка в области I?" << endl;
+    double x, y;
+    cout << "Введите координаты (x, y): ";
+    cin >> x >> y;
+    
+    if (x >= 0 && x <= 3 && y >= 0 && y <= 2) {
+        cout << "Да, точка в области I" << endl;
+    } else {
+        cout << "Нет, точка вне области I" << endl;
+    }
+}
+
+void task4_39() {
+    cout << "\n4.39. Точка в области I или III?" << endl;
+    double x, y;
+    cout << "Введите координаты (x, y): ";
+    cin >> x >> y;
+    
+    bool in_I = (x >= 0 && x <= 5 && y >= 0 && y <= 1);
+    bool in_III = (x >= -1 && x <= 0 && y >= -1 && y <= 0);
+    
+    if (in_I || in_III) {
+        cout << "Да, точка в области I или III" << endl;
+    } else {
+        cout << "Нет, точка вне областей I и III" << endl;
+    }
+}
+
+void task4_40() {
+    cout << "\n4.40. Вычисление f(x)" << endl;
+    double x;
+    cout << "Введите x: ";
+    cin >> x;
+    
+    double fx;
+    if (x >= 2. 4 && x <= 5.7) {
+        fx = x * x;
+    } else {
+        fx = 4;
+    }
+    
+    cout << fixed << setprecision(4);
+    cout << "f(x) = " << fx << endl;
+}
+
+void task4_41() {
+    cout << "\n4.41. Вычисление f(x)" << endl;
+    double x;
+    cout << "Введите x:  ";
+    cin >> x;
+    
+    double fx;
+    if (x >= 0.2 && x <= 0.9) {
+        fx = sin(x);
+    } else {
+        fx = 1;
+    }
+    
+    cout << fixed << setprecision(4);
+    cout << "f(x) = " << fx << endl;
+}
+
+void task4_42() {
+    cout << "\n4.42. Проверка неравенств для трех чисел" << endl;
+    double a, b, c;
+    cout << "Введите три числа a, b, c: ";
+    cin >> a >> b >> c;
+    
+    cout << "a) a < b < c ?" << endl;
+    if (a < b && b < c) {
+        cout << "   Да, " << a << " < " << b << " < " << c << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+    
+    cout << "b) b > a > c ?" << endl;
+    if (b > a && a > c) {
+        cout << "   Да, " << b << " > " << a << " > " << c << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+}
+
+void task4_43() {
+    cout << "\n4.43. Делимость между двумя числами" << endl;
+    int a, b;
+    cout << "Введите a и b: ";
+    cin >> a >> b;
+    
+    if ((b % a == 0) || (a % b == 0)) {
+        cout << "Да, одно из чисел является делителем другого" << endl;
+    } else {
+        cout << "Нет, ни одно из чисел не является делителем другого" << endl;
+    }
+}
+
+void task4_44() {
+    cout << "\n4.44. Остаток от деления равен c или d?" << endl;
+    int a, b, c, d;
+    cout << "Введите a, b, c, d: ";
+    cin >> a >> b >> c >> d;
+    
+    int remainder = a % b;
+    if (remainder == c || remainder == d) {
+        cout << "Да, остаток равен " << remainder << endl;
+    } else {
+        cout << "Нет, остаток = " << remainder << endl;
+    }
+}
+
+void task4_45() {
+    cout << "\n4.45. Три числа - есть ли пара равных?" << endl;
+    double a, b, c;
+    cout << "Введите три числа: ";
+    cin >> a >> b >> c;
+    
+    if (a == b || b == c || a == c) {
+        cout << "Да, есть хотя бы одна пара равных чисел" << endl;
+    } else {
+        cout << "Нет, все числа различны" << endl;
+    }
+}
+
+void task4_46() {
+    cout << "\n4.46. Треугольник равносторонний?" << endl;
+    double a, b, c;
+    cout << "Введите стороны треугольника: ";
+    cin >> a >> b >> c;
+    
+    if (a == b && b == c) {
+        cout << "Да, треугольник равносторонний" << endl;
+    } else {
+        cout << "Нет, треугольник не равносторонний" << endl;
+    }
+}
+
+void task4_47() {
+    cout << "\n4.47. Треугольник равнобедренный?" << endl;
+    double a, b, c;
+    cout << "Введите стороны треугольника: ";
+    cin >> a >> b >> c;
+    
+    if (a == b || b == c || a == c) {
+        cout << "Да, треугольник равнобедренный" << endl;
+    } else {
+        cout << "Нет, треугольник разносторонний" << endl;
+    }
+}
+
+void task4_48() {
+    cout << "\n4.48. Рост трех человек одинаков?" << endl;
+    double h1, h2, h3;
+    cout << "Введите рост трех человек: ";
+    cin >> h1 >> h2 >> h3;
+    
+    if (h1 == h2 && h2 == h3) {
+        cout << "Да, рост всех трех одинаков" << endl;
+    } else {
+        cout << "Нет, рост различается" << endl;
+    }
+}
+
+void task4_49() {
+    cout << "\n4.49. Решить уравнение ax²+bx+c=0" << endl;
+    double a, b, c;
+    cout << "Введите коэффициенты a, b, c (a ≠ 0): ";
+    cin >> a >> b >> c;
+    
+    double D = b * b - 4 * a * c;
+    cout << fixed << setprecision(4);
+    
+    if (D > 0) {
+        double x1 = (-b + sqrt(D)) / (2 * a);
+        double x2 = (-b - sqrt(D)) / (2 * a);
+        cout << "Два различных корня: x1 = " << x1 << ", x2 = " << x2 << endl;
+    } else if (D == 0) {
+        double x = -b / (2 * a);
+        cout << "Один корень (кратный): x = " << x << endl;
+    } else {
+        cout << "Вещественных корней нет" << endl;
+    }
+}
+
+void task4_50() {
+    cout << "\n4.50. Уместится ли прямоугольник в прямоугольнике" << endl;
+    double a, b, c, d;
+    cout << "Введите размеры первого прямоугольника (a, b): ";
+    cin >> a >> b;
+    cout << "Введите размеры второго прямоугольника (c, d): ";
+    cin >> c >> d;
+    
+    bool fit1 = (a <= c && b <= d);
+    bool fit2 = (a <= d && b <= c);
+    
+    if (fit1 || fit2) {
+        cout << "Да, первый прямоугольник уместится во второй" << endl;
+    } else {
+        cout << "Нет, первый прямоугольник не уместится во второй" << endl;
+    }
+}
+
+void task4_51() {
+    cout << "\n4.51. Открытка в конверт?" << endl;
+    double a, b, c, d;
+    cout << "Введите размеры конверта (a, b мм): ";
+    cin >> a >> b;
+    cout << "Введите размеры открытки (c, d мм): ";
+    cin >> c >> d;
+    
+    bool fit1 = (c <= a - 2 && d <= b - 2);
+    bool fit2 = (c <= b - 2 && d <= a - 2);
+    
+    if (fit1 || fit2) {
+        cout << "Да, открытка уместится в конверт" << endl;
+    } else {
+        cout << "Нет, открытка не уместится в конверт" << endl;
+    }
+}
+
+void task4_52() {
+    cout << "\n4.52. Голова в форточку?" << endl;
+    double a, b, d;
+    cout << "Введите размеры форточки (a, b см): ";
+    cin >> a >> b;
+    cout << "Введите диаметр головы (d см): ";
+    cin >> d;
+    
+    double required_width = d + 2;
+    double required_height = d + 2;
+    
+    if ((a >= required_width && b >= required_height) ||
+        (a >= required_height && b >= required_width)) {
+        cout << "Да, Вася может просунуть голову в форточку" << endl;
+    } else {
+        cout << "Нет, голова не пройдет в форточку" << endl;
+    }
+}
+
+void task4_53() {
+    cout << "\n4.53. Кирпич в отверстие?" << endl;
+    double a, b, c, x, y;
+    cout << "Введите ребра кирпича (a, b, c): ";
+    cin >> a >> b >> c;
+    cout << "Введите размеры отверстия (x, y): ";
+    cin >> x >> y;
+    
+    bool fit1 = (a <= x && b <= y);
+    bool fit2 = (a <= y && b <= x);
+    bool fit3 = (b <= x && c <= y);
+    bool fit4 = (b <= y && c <= x);
+    bool fit5 = (a <= x && c <= y);
+    bool fit6 = (a <= y && c <= x);
+    
+    if (fit1 || fit2 || fit3 || fit4 || fit5 || fit6) {
+        cout << "Да, кирпич пройдет в отверстие" << endl;
+    } else {
+        cout << "Нет, кирпич не пройдет" << endl;
+    }
+}
+
+void task4_54() {
+    cout << "\n4.54. Коробка в чемодан?" << endl;
+    double a1, a2, a3, b1, b2, b3;
+    cout << "Введите размеры чемодана (a1, a2, a3): ";
+    cin >> a1 >> a2 >> a3;
+    cout << "Введите размеры коробки (b1, b2, b3): ";
+    cin >> b1 >> b2 >> b3;
+    
+    // Сортируем размеры
+    vector<double> chest = {a1, a2, a3};
+    vector<double> box = {b1, b2, b3};
+    sort(chest.begin(), chest.end());
+    sort(box.begin(), box.end());
+    
+    bool fits = true;
+    for (int i = 0; i < 3; i++) {
+        if (box[i] > chest[i]) {
+            fits = false;
+            break;
+        }
+    }
+    
+    if (fits) {
+        cout << "Да, коробка уместится в чемодан" << endl;
+    } else {
+        cout << "Нет, коробка не уместится" << endl;
+    }
+}
+
+void task4_55() {
+    cout << "\n4.55. Двузначное число - есть ли цифра?" << endl;
+    int n;
+    cout << "Введите двузначное число:  ";
+    cin >> n;
+    
+    int tens = n / 10;
+    int units = n % 10;
+    
+    cout << "a) Входит ли цифра 3?" << endl;
+    if (tens == 3 || units == 3) {
+        cout << "   Да, содержит цифру 3" << endl;
+    } else {
+        cout << "   Нет, не содержит цифру 3" << endl;
+    }
+    
+    cout << "b) Введите цифру для поиска:  ";
+    int digit;
+    cin >> digit;
+    cout << "Входит ли цифра " << digit << "?" << endl;
+    if (tens == digit || units == digit) {
+        cout << "   Да, содержит цифру " << digit << endl;
+    } else {
+        cout << "   Нет, не содержит цифру " << digit << endl;
+    }
+}
+
+void task4_56() {
+    cout << "\n4.56. Двузначное число - содержит ли цифры?" << endl;
+    int n;
+    cout << "Введите двузначное число: ";
+    cin >> n;
+    
+    int tens = n / 10;
+    int units = n % 10;
+    
+    cout << "a) Содержит ли 4 или 7?" << endl;
+    if ((tens == 4 || tens == 7) || (units == 4 || units == 7)) {
+        cout << "   Да, содержит 4 или 7" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+    
+    cout << "b) Содержит ли 3, 6 или 9?" << endl;
+    if ((tens == 3 || tens == 6 || tens == 9) || 
+        (units == 3 || units == 6 || units == 9)) {
+        cout << "   Да, содержит 3, 6 или 9" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+}
+
+void task4_57() {
+    cout << "\n4.57. Трехзначное число - содержит ли цифру?" << endl;
+    int n;
+    cout << "Введите трехзначное число:  ";
+    cin >> n;
+    
+    int d1 = n / 100;
+    int d2 = (n / 10) % 10;
+    int d3 = n % 10;
+    
+    cout << "a) Содержит ли цифру 6?" << endl;
+    if (d1 == 6 || d2 == 6 || d3 == 6) {
+        cout << "   Да, содержит цифру 6" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+    
+    cout << "b) Введите цифру для поиска: ";
+    int digit;
+    cin >> digit;
+    if (d1 == digit || d2 == digit || d3 == digit) {
+        cout << "   Да, содержит цифру " << digit << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+}
+
+void task4_58() {
+    cout << "\n4.58. Трехзначное число - содержит ли цифры?" << endl;
+    int n;
+    cout << "Введите трехзначное число: ";
+    cin >> n;
+    
+    int d1 = n / 100;
+    int d2 = (n / 10) % 10;
+    int d3 = n % 10;
+    
+    cout << "a) Содержит ли 4 или 7?" << endl;
+    if ((d1 == 4 || d1 == 7 || d2 == 4 || d2 == 7 || d3 == 4 || d3 == 7)) {
+        cout << "   Да" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+    
+    cout << "b) Содержит ли 3, 6 или 9?" << endl;
+    if ((d1 == 3 || d1 == 6 || d1 == 9 || 
+         d2 == 3 || d2 == 6 || d2 == 9 ||
+         d3 == 3 || d3 == 6 || d3 == 9)) {
+        cout << "   Да" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+}
+
+void task4_59() {
+    cout << "\n4.59. Четырехзначное число - содержит ли цифру?" << endl;
+    int n;
+    cout << "Введите четырехзначное число: ";
+    cin >> n;
+    
+    int d1 = n / 1000;
+    int d2 = (n / 100) % 10;
+    int d3 = (n / 10) % 10;
+    int d4 = n % 10;
+    
+    cout << "a) Содержит ли цифру 4?" << endl;
+    if (d1 == 4 || d2 == 4 || d3 == 4 || d4 == 4) {
+        cout << "   Да" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+    
+    cout << "b) Введите цифру для поиска: ";
+    int digit;
+    cin >> digit;
+    if (d1 == digit || d2 == digit || d3 == digit || d4 == digit) {
+        cout << "   Да, содержит " << digit << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+}
+
+void task4_60() {
+    cout << "\n4.60. Четырехзначное число - содержит ли цифры?" << endl;
+    int n;
+    cout << "Введите четырехзначное число:  ";
+    cin >> n;
+    
+    int d1 = n / 1000;
+    int d2 = (n / 100) % 10;
+    int d3 = (n / 10) % 10;
+    int d4 = n % 10;
+    
+    cout << "a) Содержит ли 2 или 7?" << endl;
+    if ((d1 == 2 || d1 == 7 || d2 == 2 || d2 == 7 || 
+         d3 == 2 || d3 == 7 || d4 == 2 || d4 == 7)) {
+        cout << "   Да" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+    
+    cout << "b) Содержит ли 3, 6 или 9?" << endl;
+    if ((d1 == 3 || d1 == 6 || d1 == 9 ||
+         d2 == 3 || d2 == 6 || d2 == 9 ||
+         d3 == 3 || d3 == 6 || d3 == 9 ||
+         d4 == 3 || d4 == 6 || d4 == 9)) {
+        cout << "   Да" << endl;
+    } else {
+        cout << "   Нет" << endl;
+    }
+}
+
+void task4_61() {
+    cout << "\n4.61. Четырехзначное число - палиндром (с нулями)?" << endl;
+    int n;
+    cout << "Введите число (0-9999): ";
+    cin >> n;
+    
+    // Представляем как 4-значное с нулями впереди
+    int d1 = n / 1000;
+    int d2 = (n / 100) % 10;
+    int d3 = (n / 10) % 10;
+    int d4 = n % 10;
+    
+    if (d1 == d4 && d2 == d3) {
+        cout << "Да, число палиндром" << endl;
+    } else {
+        cout << "Нет, число не палиндром" << endl;
+    }
+}
+
+void task4_62() {
+    cout << "\n4.62. Четырехзначное число - ровно три одинаковые цифры?" << endl;
+    int n;
+    cout << "Введите число (0-9999): ";
+    cin >> n;
+    
+    int d1 = n / 1000;
+    int d2 = (n / 100) % 10;
+    int d3 = (n / 10) % 10;
+    int d4 = n % 10;
+    
+    int count = 0;
+    for (int digit = 0; digit <= 9; digit++) {
+        int freq = 0;
+        if (d1 == digit) freq++;
+        if (d2 == digit) freq++;
+        if (d3 == digit) freq++;
+        if (d4 == digit) freq++;
+        
+        if (freq == 3) {
+            cout << "Да, ровно три цифры " << digit << endl;
+            return;
+        }
+    }
+    
+    cout << "Нет, нет ровно трех одинаковых цифр" << endl;
+}
+
+void task4_63() {
+    cout << "\n4.63. Четырехзначное число - все цифры различны?" << endl;
+    int n;
+    cout << "Введите число (0-9999): ";
+    cin >> n;
+    
+    int d1 = n / 1000;
+    int d2 = (n / 100) % 10;
+    int d3 = (n / 10) % 10;
+    int d4 = n % 10;
+    
+    if (d1 != d2 && d1 != d3 && d1 != d4 &&
+        d2 != d3 && d2 != d4 && d3 != d4) {
+        cout << "Да, все четыре цифры различны" << endl;
+    } else {
+        cout << "Нет, есть одинаковые цифры" << endl;
+    }
+}
+
+void task4_64() {
+    cout << "\n4.64. Счастливое ли шестизначное число?" << endl;
+    int n;
+    cout << "Введите шестизначное число: ";
+    cin >> n;
+    
+    int d1 = n / 100000;
+    int d2 = (n / 10000) % 10;
+    int d3 = (n / 1000) % 10;
+    int d4 = (n / 100) % 10;
+    int d5 = (n / 10) % 10;
+    int d6 = n % 10;
+    
+    int sum_first = d1 + d2 + d3;
+    int sum_last = d4 + d5 + d6;
+    
+    if (sum_first == sum_last) {
+        cout << "Да, число счастливое (" << sum_first << " = " << sum_last << ")" << endl;
+    } else {
+        cout << "Нет, число не счастливое (" << sum_first << " != " << sum_last << ")" << endl;
+    }
+}
+
+void task4_65() {
+    cout << "\n4.65. Год високосный?" << endl;
+    int year;
+    cout << "Введите год: ";
+    cin >> year;
+    
+    bool is_leap = false;
+    if (year % 400 == 0) {
+        is_leap = true;
+    } else if (year % 100 == 0) {
+        is_leap = false;
+    } else if (year % 4 == 0) {
+        is_leap = true;
+    }
+    
+    if (is_leap) {
+        cout << "Да, " << year << " — високосный год" << endl;
+    } else {
+        cout << "Нет, " << year << " — невисокосный год" << endl;
+    }
+}
+
+void task4_94() {
+    cout << "\n4.94. Результат футбольной игры" << endl;
+    int points;
+    cout << "Введите количество очков: ";
+    cin >> points;
+    
+    if (points == 3) {
+        cout << "Результат:  ВЫИГРЫШ" << endl;
+    } else if (points == 1) {
+        cout << "Результат: НИЧЬЯ" << endl;
+    } else if (points == 0) {
+        cout << "Результат: ПРОИГРЫШ" << endl;
+    }
+}
+
+void task4_95() {
+    cout << "\n4.95. Весовая категория боксера" << endl;
+    double weight;
+    cout << "Введите вес боксера (кг): ";
+    cin >> weight;
+    
+    if (weight < 60) {
+        cout << "Легкий вес" << endl;
+    } else if (weight < 64) {
+        cout << "Первый полусредний вес" << endl;
+    } else if (weight < 69) {
+        cout << "Полусредний вес" << endl;
+    } else {
+        cout << "Вес вне категорий" << endl;
+    }
+}
+
+void task4_96() {
+    cout << "\n4.96. Решить квадратное уравнение" << endl;
+    double a, b, c;
+    cout << "Введите коэффициенты (a ≠ 0): ";
+    cin >> a >> b >> c;
+    
+    double D = b * b - 4 * a * c;
+    cout << fixed << setprecision(4);
+    
+    if (D > 0) {
+        double x1 = (-b + sqrt(D)) / (2 * a);
+        double x2 = (-b - sqrt(D)) / (2 * a);
+        cout << "Два корня: x1 = " << x1 << ", x2 = " << x2 << endl;
+    } else if (D == 0) {
+        double x = -b / (2 * a);
+        cout << "Один корень:  x = " << x << endl;
+    } else {
+        cout << "Вещественных корней нет" << endl;
+    }
+}
+
+void task4_97() {
+    cout << "\n4.97. Три различных числа - определить" << endl;
+    int a, b, c;
+    cout << "Введите три различных числа: ";
+    cin >> a >> b >> c;
+    
+    int max_val = max({a, b, c});
+    int min_val = min({a, b, c});
+    int mid_val = a + b + c - max_val - min_val;
+    
+    cout << "a) Самое большое:  " << max_val << endl;
+    cout << "b) Самое маленькое: " << min_val << endl;
+    cout << "c) Среднее значение: " << mid_val << endl;
+}
+
+void task4_98() {
+    cout << "\n4.98. Максимум и минимум трех чисел" << endl;
+    double a, b, c;
+    cout << "Введите три различных числа: ";
+    cin >> a >> b >> c;
+    
+    double max_val = max({a, b, c});
+    double min_val = min({a, b, c});
+    
+    cout << "Максимум: " << max_val << endl;
+    cout << "Минимум:   " << min_val << endl;
+}
+
+void task4_99() {
+    cout << "\n4.99. Сумма двух наибольших из трех чисел" << endl;
+    double a, b, c;
+    cout << "Введите три различных числа:  ";
+    cin >> a >> b >> c;
+    
+    double max_val = max({a, b, c});
+    double min_val = min({a, b, c});
+    double sum = a + b + c - min_val;
+    
+    cout << "Сумма двух наибольших: " << sum << endl;
+}
+
+void task4_100() {
+    cout << "\n4.100. Произведение двух наименьших из трех чисел" << endl;
+    double a, b, c;
+    cout << "Введите три различных числа: ";
+    cin >> a >> b >> c;
+    
+    double max_val = max({a, b, c});
+    double min_val = min({a, b, c});
+    double mid_val = a + b + c - max_val - min_val;
+    double product = min_val * mid_val;
+    
+    cout << "Произведение двух наименьших: " << product << endl;
+}
+
+void task4_101() {
+    cout << "\n4.101. Среднее арифметическое средних чисел" << endl;
+    double a, b, c, x, y, z;
+    cout << "Введите первую тройку чисел (a, b, c): ";
+    cin >> a >> b >> c;
+    cout << "Введите вторую тройку чисел (x, y, z): ";
+    cin >> x >> y >> z;
+    
+    // Находим средние числа
+    vector<double> first = {a, b, c};
+    vector<double> second = {x, y, z};
+    sort(first.begin(), first.end());
+    sort(second.begin(), second.end());
+    
+    double mid1 = first[1];
+    double mid2 = second[1];
+    double avg = (mid1 + mid2) / 2.0;
+    
+    cout << fixed << setprecision(4);
+    cout << "Среднее число первой тройки: " << mid1 << endl;
+    cout << "Среднее число второй тройки:   " << mid2 << endl;
+    cout << "Среднее арифметическое: " << avg << endl;
+}
+
+void task4_102() {
+    cout << "\n4.102. Номер четверти координатной плоскости" << endl;
+    double x, y;
+    cout << "Введите координаты (x, y) где x>0, y>0: ";
+    cin >> x >> y;
+    
+    if (x > 0 && y > 0) {
+        cout << "Точка в I четверти" << endl;
+    }
+}
+
+void task4_103() {
+    cout << "\n4.103. Максимум/минимум трех чисел (два неполных if)" << endl;
+    double a, b, c;
+    cout << "Введите три числа: ";
+    cin >> a >> b >> c;
+    
+    cout << "a) Максимум:" << endl;
+    double max_val = a;
+    if (b > max_val) max_val = b;
+    if (c > max_val) max_val = c;
+    cout << "   " << max_val << endl;
+    
+    cout << "b) Минимум:" << endl;
+    double min_val = a;
+    if (b < min_val) min_val = b;
+    if (c < min_val) min_val = c;
+    cout << "   " << min_val << endl;
+}
+
+// ============================================
+// ОПЕРАТОР ВАРИАНТА (SWITCH) (4.104 - 4.115)
+// ============================================
+
+void task4_104() {
+    cout << "\n4.104. День недели по номеру" << endl;
+    int day;
+    cout << "Введите номер дня недели (1-7): ";
+    cin >> day;
+    
+    switch (day) {
+        case 1:
+            cout << "Понедельник" << endl;
+            break;
+        case 2:
+            cout << "Вторник" << endl;
+            break;
+        case 3:
+            cout << "Среда" << endl;
+            break;
+        case 4:
+            cout << "Четверг" << endl;
+            break;
+        case 5:
+            cout << "Пятница" << endl;
+            break;
+        case 6:
+            cout << "Суббота" << endl;
+            break;
+        case 7:
+            cout << "Воскресенье" << endl;
+            break;
+        default:
+            cout << "Неверный номер дня" << endl;
+    }
+}
+
+void task4_105() {
+    cout << "\n4.105. Месяц по номеру" << endl;
+    int month;
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+    
+    switch (month) {
+        case 1:
+            cout << "Январь" << endl;
+            break;
+        case 2:
+            cout << "Февраль" << endl;
+            break;
+        case 3:
+            cout << "Март" << endl;
+            break;
+        case 4:
+            cout << "Апрель" << endl;
+            break;
+        case 5:
+            cout << "Май" << endl;
+            break;
+        case 6:
+            cout << "Июнь" << endl;
+            break;
+        case 7:
+            cout << "Июль" << endl;
+            break;
+        case 8:
+            cout << "Август" << endl;
+            break;
+        case 9:
+            cout << "Сентябрь" << endl;
+            break;
+        case 10:
+            cout << "Октябрь" << endl;
+            break;
+        case 11:
+            cout << "Ноябрь" << endl;
+            break;
+        case 12:
+            cout << "Декабрь" << endl;
+            break;
+        default:
+            cout << "Неверный номер месяца" << endl;
+    }
+}
+
+void task4_106() {
+    cout << "\n4.106. Время года по номеру месяца" << endl;
+    int month;
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+    
+    switch (month) {
+        case 12:
+        case 1:
+        case 2:
+            cout << "Зима" << endl;
+            break;
+        case 3:
+        case 4:
+        case 5:
+            cout << "Весна" << endl;
+            break;
+        case 6:
+        case 7:
+        case 8:
+            cout << "Лето" << endl;
+            break;
+        case 9:
+        case 10:
+        case 11:
+            cout << "Осень" << endl;
+            break;
+        default:
+            cout << "Неверный номер месяца" << endl;
+    }
+}
+
+void task4_107() {
+    cout << "\n4.107. Количество дней в месяце" << endl;
+    int month, year = -1;
+    cout << "Введите номер месяца (1-12): ";
+    cin >> month;
+    
+    cout << "Год високосный?  (0-нет, 1-да): ";
+    int is_leap;
+    cin >> is_leap;
+    
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            cout << "31 день" << endl;
+            break;
+        case 4: case 6: case 9: case 11:
+            cout << "30 дней" << endl;
+            break;
+        case 2: 
+            if (is_leap) {
+                cout << "29 дней (високосный год)" << endl;
+            } else {
+                cout << "28 дней" << endl;
+            }
+            break;
+        default:
+            cout << "Неверный номер месяца" << endl;
+    }
+}
+
+void task4_108() {
+    cout << "\n4.108. Масть игральной карты" << endl;
+    int suit;
+    cout << "Введите номер масти (1-4): ";
+    cin >> suit;
+    
+    switch (suit) {
+        case 1:
+            cout << "Пики" << endl;
+            break;
+        case 2:
+            cout << "Трефы" << endl;
+            break;
+        case 3:
+            cout << "Бубны" << endl;
+            break;
+        case 4:
+            cout << "Червы" << endl;
+            break;
+        default:
+            cout << "Неверный номер масти" << endl;
+    }
+}
+
+void task4_109() {
+    cout << "\n4.109. Достоинство карты" << endl;
+    int card;
+    cout << "Введите номер карты (6-14): ";
+    cin >> card;
+    
+    switch (card) {
+        case 6:
+            cout << "Шестерка" << endl;
+            break;
+        case 7:
+            cout << "Семерка" << endl;
+            break;
+        case 8:
+            cout << "Восьмерка" << endl;
+            break;
+        case 9:
+            cout << "Девятка" << endl;
+            break;
+        case 10:
+            cout << "Десятка" << endl;
+            break;
+        case 11:
+            cout << "Валет" << endl;
+            break;
+        case 12:
+            cout << "Дама" << endl;
+            break;
+        case 13:
+            cout << "Король" << endl;
+            break;
+        case 14:
+            cout << "Туз" << endl;
+            break;
+        default:
+            cout << "Неверный номер карты" << endl;
+    }
+}
+
+void task4_110() {
+    cout << "\n4.110. Полное название карты (масть и достоинство)" << endl;
+    int suit, card;
+    cout << "Введите номер масти (1-4) и достоинство (6-14): ";
+    cin >> suit >> card;
+    
+    string suit_name, card_name;
+    
+    switch (suit) {
+        case 1: suit_name = "пик"; break;
+        case 2: suit_name = "треф"; break;
+        case 3: suit_name = "бубен"; break;
+        case 4: suit_name = "червей"; break;
+        default: suit_name = "неизвестной масти";
+    }
+    
+    switch (card) {
+        case 6: card_name = "Шестерка"; break;
+        case 7: card_name = "Семерка"; break;
+        case 8: card_name = "Восьмерка"; break;
+        case 9: card_name = "Девятка"; break;
+        case 10: card_name = "Десятка"; break;
+        case 11: card_name = "Валет"; break;
+        case 12: card_name = "Дама"; break;
+        case 13: card_name = "Король"; break;
+        case 14: card_name = "Туз"; break;
+        default:  card_name = "неизвестная карта";
+    }
+    
+    cout << card_name << " " << suit_name << endl;
+}
+
+void task4_111a() {
+    cout << "\n4.111a. День недели (если 1 янв - понедельник)" << endl;
+    int k;
+    cout << "Вв��дите номер дня года (1-365): ";
+    cin >> k;
+    
+    int day_of_week = ((k - 1) % 7) + 1;
+    
+    switch (day_of_week) {
+        case 1: cout << "Понедельник" << endl; break;
+        case 2: cout << "Вторник" << endl; break;
+        case 3: cout << "Среда" << endl; break;
+        case 4: cout << "Четверг" << endl; break;
+        case 5: cout << "Пятница" << endl; break;
+        case 6: cout << "Суббота" << endl; break;
+        case 7: cout << "Воскресенье" << endl; break;
+    }
+}
+
+void task4_112() {
+    cout << "\n4.112. Месяц (если 1 янв 1990 - понедельник)" << endl;
+    int n;
+    cout << "Введите количество полных месяцев:  ";
+    cin >> n;
+    
+    int month = (n % 12) + 1;
+    
+    switch (month) {
+        case 1: cout << "Январь" << endl; break;
+        case 2: cout << "Февраль" << endl; break;
+        case 3: cout << "Март" << endl; break;
+        case 4: cout << "Апрель" << endl; break;
+        case 5: cout << "Май" << endl; break;
+        case 6: cout << "Июнь" << endl; break;
+        case 7: cout << "Июль" << endl; break;
+        case 8: cout << "Август" << endl; break;
+        case 9: cout << "Сентябрь" << endl; break;
+        case 10: cout << "Октябрь" << endl; break;
+        case 11: cout << "Ноябрь" << endl; break;
+        case 12: cout << "Декабрь" << endl; break;
+    }
+}
+
+void task4_113a() {
+    cout << "\n4.113a. Дата предыдущего дня" << endl;
+    int m, n;
+    cout << "Введите месяц и число (не 1 января): ";
+    cin >> m >> n;
+    
+    int prev_n = n - 1;
+    int prev_m = m;
+    
+    if (prev_n == 0) {
+        prev_m--;
+        if (prev_m == 0) prev_m = 12;
+        
+        // Определяем дни в месяце
+        switch (prev_m) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                prev_n = 31; break;
+            case 4: case 6: case 9: case 11:
+                prev_n = 30; break;
+            case 2:
+                prev_n = 28; break;  // Не високосный год
+        }
+    }
+    
+    cout << "Предыдущий день: " << prev_n << "." << prev_m << endl;
+}
+
+void task4_113b() {
+    cout << "\n4.113b. Дата следующего дня" << endl;
+    int m, n;
+    cout << "Введите месяц и число (не 31 декабря): ";
+    cin >> m >> n;
+    
+    // Определяем дни в месяце
+    int days_in_month;
+    switch (m) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            days_in_month = 31; break;
+        case 4: case 6: case 9: case 11:
+            days_in_month = 30; break;
+        case 2:
+            days_in_month = 28; break;
+        default:
+            days_in_month = 0;
+    }
+    
+    int next_n = n + 1;
+    int next_m = m;
+    
+    if (next_n > days_in_month) {
+        next_n = 1;
+        next_m++;
+        if (next_m > 12) next_m = 1;
+    }
+    
+    cout << "Следующий день: " << next_n << "." << next_m << endl;
+}
+
+void task4_114a() {
+    cout << "\n4.114a. Дата предыдущего дня (с учетом года)" << endl;
+    int g, m, n;
+    cout << "Введите год, месяц и число: ";
+    cin >> g >> m >> n;
+    
+    int prev_n = n - 1;
+    int prev_m = m;
+    int prev_g = g;
+    
+    if (prev_n == 0) {
+        prev_m--;
+        if (prev_m == 0) {
+            prev_m = 12;
+            prev_g--;
+        }
+        
+        // Определяем дни в месяце с учетом високоса
+        bool is_leap = (prev_g % 400 == 0) || (prev_g % 4 == 0 && prev_g % 100 != 0);
+        switch (prev_m) {
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                prev_n = 31; break;
+            case 4: case 6: case 9: case 11:
+                prev_n = 30; break;
+            case 2:
+                prev_n = is_leap ? 29 : 28; break;
+        }
+    }
+    
+    cout << "Предыдущий день: " << prev_n << "." << prev_m << "." << prev_g << endl;
+}
+
+void task4_114b() {
+    cout << "\n4.114b. Дата следующего дня (с учетом года)" << endl;
+    int g, m, n;
+    cout << "Введите год, месяц и число: ";
+    cin >> g >> m >> n;
+    
+    // Определяем дни в текущем месяце с учетом високоса
+    bool is_leap = (g % 400 == 0) || (g % 4 == 0 && g % 100 != 0);
+    int days_in_month;
+    switch (m) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            days_in_month = 31; break;
+        case 4: case 6: case 9: case 11:
+            days_in_month = 30; break;
+        case 2:
+            days_in_month = is_leap ? 29 : 28; break;
+        default:
+            days_in_month = 0;
+    }
+    
+    int next_n = n + 1;
+    int next_m = m;
+    int next_g = g;
+    
+    if (next_n > days_in_month) {
+        next_n = 1;
+        next_m++;
+        if (next_m > 12) {
+            next_m = 1;
+            next_g++;
+        }
+    }
+    
+    cout << "Следующий день: " << next_n << "." << next_m << "." << next_g << endl;
+}
+
+void task4_115() {
+    cout << "\n4.115. Восточный календарь" << endl;
+    int year;
+    cout << "Введите год нашей эры: ";
+    cin >> year;
+    
+    // Животные (начиная с 1984 года)
+    string animals[] = {
+        "Крыса", "Корова", "Тигр", "Заяц", "Дракон", "Змея",
+        "Лошадь", "Овца", "Обезьяна", "Петух", "Собака", "Свинья"
+    };
+    
+    // Цвета (начиная с зеленого)
+    string colors[] = {"Зеленый", "Красный", "Желтый", "Белый", "Черный"};
+    
+    // Вычисляем позицию в 60-летнем цикле
+    int pos_in_cycle = (year - 1984) % 60;
+    if (pos_in_cycle < 0) pos_in_cycle += 60;
+    
+    // Животное:  каждое животное повторяется 5 раз (по одному для каждого цвета)
+    int animal_index = (pos_in_cycle / 5) % 12;
+    
+    // Цвет: каждый цвет "действует" два года
+    int color_index = (pos_in_cycle / 2) % 5;
+    
+    cout << "Год: " << animals[animal_index] << ", " << colors[color_index] << endl;
+}
+
+// ============================================
+// ЗАДАЧИ ПОВЫШЕННОЙ СЛОЖНОСТИ (4.116 - 4.141)
+// ============================================
+
+void task4_125() {
+    cout << "\n4.125. Согласование слова 'лет'" << endl;
+    int n;
+    cout << "Введите возраст (1-99): ";
+    cin >> n;
+    
+    string word;
+    int last_digit = n % 10;
+    int last_two = n % 100;
+    
+    if (last_two >= 11 && last_two <= 19) {
+        word = "лет";
+    } else if (last_digit == 1) {
+        word = "год";
+    } else if (last_digit >= 2 && last_digit <= 4) {
+        word = "года";
+    } else {
+        word = "лет";
+    }
+    
+    cout << "Мне " << n << " " << word << endl;
+}
+
+void task4_126() {
+    cout << "\n4.126. Согласование слова 'гриб'" << endl;
+    int k;
+    cout << "Введите количество грибов:  ";
+    cin >> k;
+    
+    string word;
+    int last_digit = k % 10;
+    int last_two = k % 100;
+    
+    if (last_two >= 11 && last_two <= 19) {
+        word = "грибов";
+    } else if (last_digit == 1) {
+        word = "гриб";
+    } else if (last_digit >= 2 && last_digit <= 4) {
+        word = "гриба";
+    } else {
+        word = "грибов";
+    }
+    
+    cout << "Мы нашли " << k << " " << word << " в лесу" << endl;
+}
+
+void task4_127() {
+    cout << "\n4.127. Стоимость в рублях и копейках" << endl;
+    int n;
+    cout << "Введите стоимость в копейках: ";
+    cin >> n;
+    
+    int rubles = n / 100;
+    int kopecks = n % 100;
+    
+    string ruble_word, kopeck_word;
+    
+    int r_last = rubles % 10;
+    int r_last_two = rubles % 100;
+    if (r_last_two >= 11 && r_last_two <= 19) {
+        ruble_word = "рублей";
+    } else if (r_last == 1) {
+        ruble_word = "рубль";
+    } else if (r_last >= 2 && r_last <= 4) {
+        ruble_word = "рубля";
+    } else {
+        ruble_word = "рублей";
+    }
+    
+    int k_last = kopecks % 10;
+    int k_last_two = kopecks % 100;
+    if (k_last_two >= 11 && k_last_two <= 19) {
+        kopeck_word = "копеек";
+    } else if (k_last == 1) {
+        kopeck_word = "копейка";
+    } else if (k_last >= 2 && k_last <= 4) {
+        kopeck_word = "копейки";
+    } else {
+        kopeck_word = "копеек";
+    }
+    
+    cout << rubles << " " << ruble_word << " " << kopecks << " " << kopeck_word << endl;
+}
+
+void task4_128() {
+    cout << "\n4.128. Возраст в годах и месяцах" << endl;
+    int n;
+    cout << "Введите возраст в месяцах (1-1188): ";
+    cin >> n;
+    
+    int years = n / 12;
+    int months = n % 12;
+    
+    string year_word, month_word;
+    
+    int y_last = years % 10;
+    int y_last_two = years % 100;
+    if (y_last_two >= 11 && y_last_two <= 19) {
+        year_word = "лет";
+    } else if (y_last == 1) {
+        year_word = "год";
+    } else if (y_last >= 2 && y_last <= 4) {
+        year_word = "года";
+    } else {
+        year_word = "лет";
+    }
+    
+    int m_last = months % 10;
+    int m_last_two = months % 100;
+    if (m_last_two >= 11 && m_last_two <= 19) {
+        month_word = "месяцев";
+    } else if (m_last == 1) {
+        month_word = "месяц";
+    } else if (m_last >= 2 && m_last <= 4) {
+        month_word = "месяца";
+    } else {
+        month_word = "месяцев";
+    }
+    
+    cout << years << " " << year_word << " " << months << " " << month_word << endl;
+}
+
+void task4_129() {
+    cout << "\n4.129. Возраст человека по датам рождения" << endl;
+    int year_birth, month_birth, day_birth;
+    int year_now, month_now, day_now;
+    
+    cout << "Введите дату рождения (год месяц день): ";
+    cin >> year_birth >> month_birth >> day_birth;
+    cout << "Введите текущую дату (год месяц день): ";
+    cin >> year_now >> month_now >> day_now;
+    
+    int age = year_now - year_birth;
+    
+    if (month_now < month_birth || (month_now == month_birth && day_now < day_birth)) {
+        age--;
+    }
+    
+    cout << "Возраст: " << age << " лет" << endl;
+}
+
+void task4_130() {
+    cout << "\n4.130. Кто из двух старше" << endl;
+    int y1, m1, y2, m2;
+    cout << "Введите год и месяц рождения первого:  ";
+    cin >> y1 >> m1;
+    cout << "Введите год и месяц рождения второ��о: ";
+    cin >> y2 >> m2;
+    
+    if (y1 < y2) {
+        cout << "Первый человек старше" << endl;
+    } else if (y1 > y2) {
+        cout << "Второй человек старше" << endl;
+    } else {
+        if (m1 < m2) {
+            cout << "Первый человек старше" << endl;
+        } else if (m1 > m2) {
+            cout << "Второй человек старше" << endl;
+        } else {
+            cout << "Они одного возраста" << endl;
+        }
+    }
+}
+
+void task4_131() {
+    cout << "\n4.131. Возраст в годах и месяцах (по датам рождения)" << endl;
+    int year_birth, month_birth, year_now, month_now;
+    
+    cout << "Введите год и месяц рождения: ";
+    cin >> year_birth >> month_birth;
+    cout << "Введите текущий год и месяц: ";
+    cin >> year_now >> month_now;
+    
+    int years = year_now - year_birth;
+    int months = month_now - month_birth;
+    
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+    
+    cout << "Возраст: " << years << " лет " << months << " месяцев" << endl;
+}
+
+void task4_135() {
+    cout << "\n4.135. Светофор для водителей" << endl;
+    double t;
+    cout << "Введите время в минутах (с начала часа): ";
+    cin >> t;
+    
+    int minute = (int)t % 6;  // Цикл 6 минут (3+1+2)
+    
+    if (minute < 3) {
+        cout << "Горит ЗЕЛЕНЫЙ сигнал" << endl;
+    } else if (minute < 4) {
+        cout << "Горит ЖЕЛТЫЙ сигнал" << endl;
+    } else {
+        cout << "Горит КРАСНЫЙ сигнал" << endl;
+    }
+}
+
+void task4_136a() {
+    cout << "\n4.136a. Выходной или рабочий день (1 янв - пн)" << endl;
+    int k;
+    cout << "Введите номер дня года (1-365): ";
+    cin >> k;
+    
+    int day_of_week = ((k - 1) % 7) + 1;
+    
+    if (day_of_week == 6 || day_of_week == 7) {
+        cout << "Выходной день" << endl;
+    } else {
+        cout << "Рабочий день" << endl;
+    }
+}
+
+void task4_137() {
+    cout << "\n4.137. k-я цифра в последовательности 101112... 9899" << endl;
+    int k;
+    cout << "Введите номер цифры (1-180): ";
+    cin >> k;
+    
+    int pair_number = (k - 1) / 2 + 1;
+    int two_digit_number = 10 + pair_number - 1;
+    int digit_position = (k - 1) % 2;
+    
+    int digit;
+    if (digit_position == 0) {
+        digit = two_digit_number / 10;
+    } else {
+        digit = two_digit_number % 10;
+    }
+    
+    cout << k << "-я цифра: " << digit << endl;
+}
+
+void task4_122() {
+    cout << "\n4.122. Существует ли треугольник?" << endl;
+    double a, b, c;
+    cout << "Введите три стороны:  ";
+    cin >> a >> b >> c;
+    
+    if ((a + b > c) && (b + c > a) && (a + c > b)) {
+        cout << "Да, треугольник существует" << endl;
+    } else {
+        cout << "Нет, треугольник не существует" << endl;
+    }
+}
+
+void task4_123() {
+    cout << "\n4.123. Треугольник прямоугольный?" << endl;
+    double a, b, c;
+    cout << "Введите три стороны: ";
+    cin >> a >> b >> c;
+    
+    if ((a + b > c) && (b + c > a) && (a + c > b)) {
+        // Сортируем стороны
+        vector<double> sides = {a, b, c};
+        sort(sides.begin(), sides.end());
+        
+        double eps = 1e-6;
+        if (abs(sides[0]*sides[0] + sides[1]*sides[1] - sides[2]*sides[2]) < eps) {
+            cout << "Да, треугольник прямоугольный" << endl;
+        } else {
+            cout << "Нет, треугольник не прямоугольный" << endl;
+        }
+    } else {
+        cout << "Треугольник не существует" << endl;
+    }
+}
+
+void task4_124() {
+    cout << "\n4.124. Вид треугольника" << endl;
+    double a, b, c;
+    cout << "Введите три стороны: ";
+    cin >> a >> b >> c;
+    
+    if ((a + b > c) && (b + c > a) && (a + c > b)) {
+        vector<double> sides = {a, b, c};
+        sort(sides.begin(), sides.end());
+        
+        double eps = 1e-6;
+        double sq_sum = sides[0]*sides[0] + sides[1]*sides[1];
+        double sq_hyp = sides[2]*sides[2];
+        
+        cout << "а) Вид треугольника: ";
+        if (abs(sq_sum - sq_hyp) < eps) {
+            cout << "Прямоугольный" << endl;
+        } else if (sq_sum > sq_hyp) {
+            cout << "Остроугольный" << endl;
+        } else {
+            cout << "Тупоугольный" << endl;
+        }
+        
+        cout << "б) Вид и особенности: ";
+        if (abs(a - b) < eps && abs(b - c) < eps) {
+            cout << "Равносторонний" << endl;
+        } else if ((abs(a - b) < eps) || (abs(b - c) < eps) || (abs(a - c) < eps)) {
+            cout << "Равнобедренный, ";
+            if (abs(sq_sum - sq_hyp) < eps) {
+                cout << "прямоугольный" << endl;
+            } else if (sq_sum > sq_hyp) {
+                cout << "остроугольный" << endl;
+            } else {
+                cout << "тупоугольный" << endl;
+            }
+        } else {
+            cout << "Разносторонний, ";
+            if (abs(sq_sum - sq_hyp) < eps) {
+                cout << "прямоугольный" << endl;
+            } else if (sq_sum > sq_hyp) {
+                cout << "остроугольный" << endl;
+            } else {
+                cout << "тупоугольный" << endl;
+            }
+        }
+    } else {
+        cout << "Треугольник не существует" << endl;
+    }
+}
+
+
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    
+    int choice;
+    
+    while (true) {
+    
+
+        }
+        
+        cin.ignore();
+        cin.ignore();
+    }
+    
+    return 0;
+}
