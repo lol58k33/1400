@@ -1,0 +1,1296 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+// ============================================
+// ТЕОРИЯ
+// ============================================
+void printTheory() {
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  ТЕОРИЯ:  ВЕЛИЧИНЫ ЛОГИЧЕСКОГО ТИПА       ║" << endl;
+    cout << "╚════════════════════════════════════════════╝" << endl;
+    
+    cout << "\n1. ПРОСТОЕ УСЛОВИЕ:" << endl;
+    cout << "   Операции отношения: <, >, <=, >=, ==, ! =" << endl;
+    cout << "   Результат: true (Истина) или false (Ложь)" << endl;
+    
+    cout << "\n2. СОСТАВНОЕ УСЛОВИЕ:" << endl;
+    cout << "   Логические операции: && (И), || (ИЛИ), ! (НЕ)" << endl;
+    cout << "   Приоритет: 1) !  (НЕ)  2) && (И)  3) || (ИЛИ)" << endl;
+    cout << "   Изменить: скобками ()" << endl;
+    
+    cout << "\n3. ТАБЛИЦА ИСТИННОСТИ (2 переменные):" << endl;
+    cout << "   ┌───┬───┬─────┬─────┬─────┐" << endl;
+    cout << "   │ A │ B │ A&&B│ A||B│ !A  │" << endl;
+    cout << "   ├───┼───┼─────┼─────┼─────┤" << endl;
+    cout << "   │ T │ T │  T  │  T  │  F  │" << endl;
+    cout << "   │ T │ F │  F  │  T  │  F  │" << endl;
+    cout << "   │ F │ T │  F  │  T  │  T  │" << endl;
+    cout << "   │ F │ F │  F  │  F  │  T  │" << endl;
+    cout << "   └───┴───┴─────┴─────┴─────┘" << endl;
+    
+    cout << "\n4. 2 логические величины:  2² = 4 варианта" << endl;
+    cout << "\n5. 3 логические величины: 2³ = 8 вариантов" << endl;
+}
+
+// ============================================
+// ВЫЧИСЛЕНИЕ ЛОГИЧЕСКИХ ВЫРАЖЕНИЙ (3. 1 - 3.12)
+// ============================================
+
+void task3_1() {
+    cout << "\n3.1. A=T, B=F, C=F" << endl;
+    bool A = true, B = false, C = false;
+    
+    cout << "a) A || B = " << (A || B ?  "true" : "false") << endl;
+    cout << "b) A && B = " << (A && B ? "true" :  "false") << endl;
+    cout << "c) B || C = " << (B || C ? "true" : "false") << endl;
+}
+
+void task3_2() {
+    cout << "\n3.2. X=F, Y=T, Z=F" << endl;
+    bool X = false, Y = true, Z = false;
+    
+    cout << "a) X || Z = " << (X || Z ?  "true" : "false") << endl;
+    cout << "b) X && Y = " << (X && Y ? "true" :  "false") << endl;
+    cout << "c) X && Z = " << (X && Z ? "true" : "false") << endl;
+}
+
+void task3_3() {
+    cout << "\n3.3. A=T, B=F, C=F" << endl;
+    bool A = true, B = false, C = false;
+    
+    cout << "a) !A && B = " << (! A && B ? "true" :  "false") << endl;
+    cout << "b) A || ! B = " << (A || ! B ? "true" : "false") << endl;
+    cout << "c) A && B || C = " << (A && B || C ? "true" : "false") << endl;
+}
+
+void task3_4() {
+    cout << "\n3.4. X=T, Y=T, Z=F" << endl;
+    bool X = true, Y = true, Z = false;
+    
+    cout << "a) !X && Y = " << (!X && Y ?  "true" : "false") << endl;
+    cout << "b) X || !Y = " << (X || !Y ? "true" : "false") << endl;
+    cout << "c) X || Y && Z = " << (X || Y && Z ? "true" : "false") << endl;
+}
+
+void task3_5() {
+    cout << "\n3.5. A=T, B=F, C=F" << endl;
+    bool A = true, B = false, C = false;
+    
+    cout << "a) A || B && ! C = " << (A || B && !C ? "true" :  "false") << endl;
+    cout << "b) !A && ! B = " << (!A && !B ?  "true" : "false") << endl;
+    cout << "c) !(A && C) || B = " << (!(A && C) || B ? "true" : "false") << endl;
+    cout << "d) A && ! B || C = " << (A && !B || C ? "true" : "false") << endl;
+    cout << "e) A && (! B || C) = " << (A && (!B || C) ? "true" : "false") << endl;
+    cout << "f) A || (!(B && C)) = " << (A || (!(B && C)) ? "true" : "false") << endl;
+}
+
+void task3_6() {
+    cout << "\n3.6. X=F, Y=F, Z=T" << endl;
+    bool X = false, Y = false, Z = true;
+    
+    cout << "a) X || Y && ! Z = " << (X || Y && !Z ? "true" :  "false") << endl;
+    cout << "b) !X && ! Y = " << (!X && ! Y ? "true" : "false") << endl;
+    cout << "c) !(X && Z) || Y = " << (!(X && Z) || Y ? "true" : "false") << endl;
+    cout << "d) X && !Y || Z = " << (X && !Y || Z ? "true" : "false") << endl;
+    cout << "e) X && (!Y || Z) = " << (X && (!Y || Z) ? "true" : "false") << endl;
+    cout << "f) X || (!(Y || Z)) = " << (X || (!(Y || Z)) ? "true" : "false") << endl;
+}
+
+void task3_7() {
+    cout << "\n3.7. A=T, B=F, C=F" << endl;
+    bool A = true, B = false, C = false;
+    
+    cout << "a) A || !(A && B) || C = " << (A || !(A && B) || C ? "true" : "false") << endl;
+    cout << "b) !A || A && (B || C) = " << (!A || A && (B || C) ? "true" : "false") << endl;
+    cout << "c) (A || B && !C) && C = " << ((A || B && !C) && C ? "true" : "false") << endl;
+}
+
+void task3_8() {
+    cout << "\n3.8. X=F, Y=T, Z=F" << endl;
+    bool X = false, Y = true, Z = false;
+    
+    cout << "a) X && !(Z || Y) || !Z = " << (X && !(Z || Y) || !Z ? "true" : "false") << endl;
+    cout << "b) !X || X && (Y || Z) = " << (!X || X && (Y || Z) ? "true" : "false") << endl;
+    cout << "c) (X || Y && !Z) && Z = " << ((X || Y && !Z) && Z ? "true" : "false") << endl;
+}
+
+void task3_9() {
+    cout << "\n3.9. X=T, Y=F, Z=F" << endl;
+    bool X = true, Y = false, Z = false;
+    
+    cout << "a) !X || ! Y || ! Z = " << (! X || !Y || !Z ?  "true" : "false") << endl;
+    cout << "b) (!X || !Y) && (X || Y) = " << ((!X || !Y) && (X || Y) ? "true" : "false") << endl;
+    cout << "c) X && Y || X && Z || ! Z = " << (X && Y || X && Z || !Z ? "true" : "false") << endl;
+}
+
+void task3_10() {
+    cout << "\n3.10. A=F, B=F, C=T" << endl;
+    bool A = false, B = false, C = true;
+    
+    cout << "a) (!A || ! B) && !C = " << ((!A || !B) && !C ? "true" : "false") << endl;
+    cout << "b) (!A || !B) && (A || B) = " << ((!A || !B) && (A || B) ? "true" : "false") << endl;
+    cout << "c) A && B || A && C || !C = " << (A && B || A && C || !C ? "true" :  "false") << endl;
+}
+
+void task3_11() {
+    cout << "\n3.11. Выражения с переменными" << endl;
+    
+    cout << "\na) x²+y²==4 при x=1, y=1: " << (1*1 + 1*1 == 4 ? "true" : "false") << endl;
+    cout << "b) (x>0) || (y²==4) при x=-1, y=2: " << ((-1 > 0) || (2*2 == 4) ? "true" : "false") << endl;
+    cout << "c) (x>0) && (y²==4) при x=-1, y=2: " << ((-1 > 0) && (2*2 == 4) ? "true" : "false") << endl;
+    cout << "d) (x*y>0) && (y>x) при x=-2, y=-1: " << ((-2*-1 > 0) && (-1 > -2) ? "true" : "false") << endl;
+    cout << "e) (x*y>0) || (y<x) при x=-2, y=-1: " << ((-2*-1 > 0) || (-1 < -2) ? "true" : "false") << endl;
+    cout << "f) !(x*y<0) && (y>x) при x=-2, y=-1: " << (! (-2*-1 < 0) && (-1 > -2) ? "true" : "false") << endl;
+    cout << "g) !(x*y<0) || (y>x) при x=-1, y=2: " << (!(-1*2 < 0) || (2 > -1) ? "true" : "false") << endl;
+}
+
+void task3_12() {
+    cout << "\n3.12. Выражения с переменными" << endl;
+    
+    cout << "\na) x²+y²==0 при x=1, y=-1: " << (1*1 + (-1)*(-1) == 0 ? "true" : "false") << endl;
+    cout << "b) (x>2) || (y²==4) при x=-2, y=2: " << ((-2 > 2) || (2*2 == 4) ? "true" : "false") << endl;
+    cout << "c) (x>0) && (y²==4) при x=-2, y=2: " << ((-2 > 0) && (2*2 == 4) ? "true" : "false") << endl;
+    cout << "d) (x*y>4) && (y>x) при x=-1, y=-2: " << ((-1*-2 > 4) && (-2 > -1) ? "true" : "false") << endl;
+    cout << "e) (x*y>0) || (y<x) при x=-2, y=-1: " << ((-2*-1 > 0) || (-1 < -2) ? "true" : "false") << endl;
+    cout << "f) !(x*y<1) && (y>x) при x=-1, y=2: " << (! (-1*2 < 1) && (2 > -1) ? "true" : "false") << endl;
+    cout << "g) !(x*y<0) || (y>x) при x=-2, y=-1: " << (!(-2*-1 < 0) || (-1 > -2) ? "true" : "false") << endl;
+}
+
+// ============================================
+// ТАБЛИЦЫ ИСТИННОСТИ (3.13 - 3.26)
+// ============================================
+
+void task3_13a() {
+    cout << "\n3.13a) !(A && B) при всех A, B:" << endl;
+    cout << "┌───┬───┬────────────┐" << endl;
+    cout << "│ A │ B │ !(A && B)  │" << endl;
+    cout << "├───┼───┼────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (!(A && B) ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────┘" << endl;
+}
+
+void task3_13b() {
+    cout << "\n3.13b) !A || B при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────┐" << endl;
+    cout << "│ A │ B │ !A || B  │" << endl;
+    cout << "├───┼───┼──────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ "
+                 << (! A || B ?  "true " : "false") << "  │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────┘" << endl;
+}
+
+void task3_13c() {
+    cout << "\n3.13c) A || !B при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────┐" << endl;
+    cout << "│ A │ B │ A || ! B  │" << endl;
+    cout << "├───┼───┼──────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ "
+                 << (A || ! B ? "true " : "false") << "  │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────┘" << endl;
+}
+
+void task3_14a() {
+    cout << "\n3.14a) !(X || Y) при всех X, Y:" << endl;
+    cout << "┌───┬───┬────────────┐" << endl;
+    cout << "│ X │ Y │ !(X || Y)  │" << endl;
+    cout << "├───┼───┼────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (!(X || Y) ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────┘" << endl;
+}
+
+void task3_14b() {
+    cout << "\n3.14b) ! X && Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────┐" << endl;
+    cout << "│ X │ Y │ !X && Y  │" << endl;
+    cout << "├───┼───┼──────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" :  "F") << " │ " << (Y ? "T" :  "F") << " │ "
+                 << (!X && Y ? "true " : "false") << "  │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────┘" << endl;
+}
+
+void task3_14c() {
+    cout << "\n3.14c) X && !Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────┐" << endl;
+    cout << "│ X │ Y │ X && !Y  │" << endl;
+    cout << "├───┼───┼──────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (X && !Y ? "true " : "false") << "  │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────┘" << endl;
+}
+
+void task3_15a() {
+    cout << "\n3.15a) !A || ! B при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────┐" << endl;
+    cout << "│ A │ B │ !A || !B │" << endl;
+    cout << "├───┼───┼──────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (!A || !B ? "true " : "false") << "  │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────┘" << endl;
+}
+
+void task3_15b() {
+    cout << "\n3.15b) A && (A || ! B) при всех A, B:" << endl;
+    cout << "┌───┬───┬────────────────────┐" << endl;
+    cout << "│ A │ B │ A && (A || !B)     │" << endl;
+    cout << "├───┼───┼────────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ "
+                 << (A && (A || !B) ? "true " : "false") << "       │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────────────┘" << endl;
+}
+
+void task3_15c() {
+    cout << "\n3.15c) (! A || B) && B при всех A, B:" << endl;
+    cout << "┌───┬───┬────────────────────┐" << endl;
+    cout << "│ A │ B │ (! A || B) && B     │" << endl;
+    cout << "├───┼───┼────────────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << ((!A || B) && B ? "true " : "false") << "       │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────────────┘" << endl;
+}
+
+void task3_16a() {
+    cout << "\n3.16a) !X && !Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────┐" << endl;
+    cout << "│ X │ Y │ ! X && !Y │" << endl;
+    cout << "├───┼───┼──────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (! X && !Y ? "true " : "false") << "  │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────┘" << endl;
+}
+
+void task3_16b() {
+    cout << "\n3.16b) X || (! X && Y) при всех X, Y:" << endl;
+    cout << "┌───┬───┬────────────────────┐" << endl;
+    cout << "│ X │ Y │ X || (!X && Y)     │" << endl;
+    cout << "├───┼───┼────────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (X || (!X && Y) ? "true " : "false") << "       │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────────────┘" << endl;
+}
+
+void task3_16c() {
+    cout << "\n3.16c) (!X && Y) || Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬───��──────────────────┐" << endl;
+    cout << "│ X │ Y │ (!X && Y) || Y       │" << endl;
+    cout << "├───┼───┼──────────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << ((!X && Y) || Y ? "true " : "false") << "         │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────────────┘" << endl;
+}
+
+void task3_17a() {
+    cout << "\n3.17a) !A && !B || A при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────────┐" << endl;
+    cout << "│ A │ B │ !A && !B || A│" << endl;
+    cout << "├───┼───┼──────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B :  {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (! A && !B || A ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────┘" << endl;
+}
+
+void task3_17b() {
+    cout << "\n3.17b) B || !A && !B при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────────┐" << endl;
+    cout << "│ A │ B │ B || !A && !B│" << endl;
+    cout << "├───┼───┼──────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B :  {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (B || !A && !B ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────┘" << endl;
+}
+
+void task3_17c() {
+    cout << "\n3.17c) B && !(A && ! B) при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ B && !(A && !B)  │" << endl;
+    cout << "├───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ "
+                 << (B && !(A && !B) ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────────┘" << endl;
+}
+
+void task3_18a() {
+    cout << "\n3.18a) !(X && ! Y) || X при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ !(X && !Y) || X  │" << endl;
+    cout << "├───┼───┼──────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" :  "F") << " │ " << (Y ? "T" :  "F") << " │ "
+                 << (!(X && !Y) || X ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴���─────────────────┘" << endl;
+}
+
+void task3_18b() {
+    cout << "\n3.18b) Y && ! X || ! Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────────┐" << endl;
+    cout << "│ X │ Y │ Y && !X || ! Y│" << endl;
+    cout << "├───┼───┼──────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y :  {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (Y && !X || !Y ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────┘" << endl;
+}
+
+void task3_18c() {
+    cout << "\n3.18c) !Y && !X || Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────────┐" << endl;
+    cout << "│ X │ Y │ ! Y && !X || Y│" << endl;
+    cout << "├───┼───┼──────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y :  {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (! Y && !X || Y ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────┘" << endl;
+}
+
+void task3_19a() {
+    cout << "\n3.19a) !(! A && ! B) && A при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ !(!A && !B) && A │" << endl;
+    cout << "├───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (!(!A && ! B) && A ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────────┘" << endl;
+}
+
+void task3_19b() {
+    cout << "\n3.19b) !(!A || !B) || A при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ !(!A || !B) || A │" << endl;
+    cout << "├───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (! (!A || !B) || A ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────────┘" << endl;
+}
+
+void task3_19c() {
+    cout << "\n3.19c) !(!A || ! B) && B при всех A, B:" << endl;
+    cout << "┌───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ ! (!A || !B) && B │" << endl;
+    cout << "├───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ "
+                 << (!(!A || !B) && B ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────────┘" << endl;
+}
+
+void task3_20a() {
+    cout << "\n3.20a) !(! X || Y) || !X при всех X, Y:" << endl;
+    cout << "┌───┬───┬────────────────────┐" << endl;
+    cout << "│ X │ Y │ ! (!X || Y) || !X  │" << endl;
+    cout << "├───┼───┼────────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" :  "F") << " │ " << (Y ? "T" :  "F") << " │ "
+                 << (!(!X || Y) || !X ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────────────┘" << endl;
+}
+
+void task3_20b() {
+    cout << "\n3.20b) !(!X && !Y) && X при всех X, Y:" << endl;
+    cout << "┌───┬───┬────────────────────┐" << endl;
+    cout << "│ X │ Y │ ! (!X && !Y) && X  │" << endl;
+    cout << "├───┼───┼───��────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" :  "F") << " │ " << (Y ? "T" :  "F") << " │ "
+                 << (!(!X && !Y) && X ? "true " : "false") << "     │" << endl;
+        }
+    }
+    cout << "└───┴───┴────────────────────┘" << endl;
+}
+
+void task3_20c() {
+    cout << "\n3.20c) !(X || ! Y) || !Y при всех X, Y:" << endl;
+    cout << "┌───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ !(X || !Y) || !Y │" << endl;
+    cout << "├───┼───┼──────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ "
+                 << (!(X || !Y) || !Y ? "true " : "false") << "    │" << endl;
+        }
+    }
+    cout << "└───┴───┴──────────────────┘" << endl;
+}
+
+// ============================================
+// 3-ПЕРЕМЕННЫЕ ТАБЛИЦЫ (3.21 - 3.26)
+// ============================================
+
+void task3_21a() {
+    cout << "\n3.21a) !(A || ! B && C) при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬─────────────────┐" << endl;
+    cout << "│ A │ B │ C │ !(A||!B&&C)     │" << endl;
+    cout << "├───┼───┼───┼─────────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ " << (C ? "T" :  "F") << " │ "
+                     << (!(A || !B && C) ? "true " : "false") << "     │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴─────────────────┘" << endl;
+}
+
+void task3_21b() {
+    cout << "\n3.21b) A && !(B && ! C) при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ C │ A&&!(B&&!C)      │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ " << (C ? "T" : "F") << " │ "
+                     << (A && !(B && !C) ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_21c() {
+    cout << "\n3.21c) !(! A || B && C) при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ C │ !(!A||B&&C)      │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ " << (C ? "T" :  "F") << " │ "
+                     << (!(!A || B && C) ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_22a() {
+    cout << "\n3.22a) !(X || ! Y && Z) при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ !(X||!Y&&Z)      │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ?  "T" : "F") << " │ " << (Y ?  "T" : "F") << " │ " << (Z ?  "T" : "F") << " │ "
+                     << (!(X || !Y && Z) ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_22b() {
+    cout << "\n3.22b) Y || (X && !Y || Z) при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬───────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ Y||(X&&!Y||Z)    │" << endl;
+    cout << "├───┼───┼───┼───────────────────┤" << endl;
+    
+    for (bool X :  {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" :  "F") << " │ " << (Y ? "T" :  "F") << " │ " << (Z ? "T" :  "F") << " │ "
+                     << (Y || (X && !Y || Z) ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴───────────────────┘" << endl;
+}
+
+void task3_22c() {
+    cout << "\n3.22c) !(! X && Y || Z) при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ !(!X&&Y||Z)      │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool X :  {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" :  "F") << " │ " << (Y ? "T" :  "F") << " │ " << (Z ? "T" :  "F") << " │ "
+                     << (!(!X && Y || Z) ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_23a() {
+    cout << "\n3.23a) !(A || ! B && C) || C при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ C │ !(A||!B&&C)||C   │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ " << (C ? "T" :  "F") << " │ "
+                     << (!(A || !B && C) || C ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_23b() {
+    cout << "\n3.23b) !(A && !B || C) && B при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ C │ !(A&&!B||C)&&B   │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ " << (C ? "T" : "F") << " │ "
+                     << (!(A && !B || C) && B ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_23c() {
+    cout << "\n3.23c) !(!A || B && C) || A при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ A │ B │ C │ ! (!A||B&&C)||A   │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ " << (C ? "T" : "F") << " │ "
+                     << (!(!A || B && C) || A ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_24a() {
+    cout << "\n3.24a) !(Y || !X && Z) || Z при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ !(Y||!X&&Z)||Z   │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ " << (Z ? "T" : "F") << " │ "
+                     << (!(Y || !X && Z) || Z ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_24b() {
+    cout << "\n3.24b) X && ! (! Y || Z) || Y при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ X&&!(!Y||Z)||Y   │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ " << (Z ? "T" : "F") << " │ "
+                     << (X && !(!Y || Z) || Y ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_24c() {
+    cout << "\n3.24c) !(X || Y && Z) || !X при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ !(X||Y&&Z)||!X   │" << endl;
+    cout << "├───┼───┼───┼──────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ " << (Z ? "T" : "F") << " │ "
+                     << (!(X || Y && Z) || !X ? "true " : "false") << "      │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────┘" << endl;
+}
+
+void task3_25a() {
+    cout << "\n3.25a) !(A && B) && (! A || ! C) при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬────────────────────────┐" << endl;
+    cout << "│ A │ B │ C │ !(A&&B)&&(!A||!C)      │" << endl;
+    cout << "├───┼───┼───┼────────────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ " << (C ? "T" : "F") << " │ "
+                     << (!(A && B) && (!A || !C) ? "true " : "false") << "       │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴────────────────────────┘" << endl;
+}
+
+void task3_25b() {
+    cout << "\n3.25b) !(A && ! B) || (A || !C) при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────────┐" << endl;
+    cout << "│ A │ B │ C │ !(A&&!B)||(A||!C)    │" << endl;
+    cout << "├───┼───┼───┼──────────────────────┤" << endl;
+    
+    for (bool A : {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" : "F") << " │ " << (B ? "T" : "F") << " │ " << (C ? "T" : "F") << " │ "
+                     << (!(A && !B) || (A || !C) ? "true " : "false") << "    │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────────┘" << endl;
+}
+
+void task3_25c() {
+    cout << "\n3.25c) A && ! B || !(A || ! C) при всех A, B, C:" << endl;
+    cout << "┌───┬───┬───┬──────────────────────┐" << endl;
+    cout << "│ A │ B │ C │ A&&!B||!(A||!C)      │" << endl;
+    cout << "├───┼───┼───┼──────────────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            for (bool C : {true, false}) {
+                cout << "│ " << (A ? "T" :  "F") << " │ " << (B ? "T" :  "F") << " │ " << (C ? "T" :  "F") << " │ "
+                     << (A && ! B || !(A || !C) ? "true " : "false") << "    │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────────┘" << endl;
+}
+
+void task3_26a() {
+    cout << "\n3.26a) !(X || Y) && (!X || !Z) при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬────────────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ !(X||Y)&&(!X||!Z)      │" << endl;
+    cout << "├───┼───┼───┼────────────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ?  "T" : "F") << " │ " << (Y ?  "T" : "F") << " │ " << (Z ?  "T" : "F") << " │ "
+                     << (!(X || Y) && (!X || !Z) ? "true " : "false") << "       │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴────────────────────────┘" << endl;
+}
+
+void task3_26b() {
+    cout << "\n3.26b) !(! X && Y) || (X && !Z) при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ ! (!X&&Y)||(X&&!Z)    │" << endl;
+    cout << "├───┼───┼───┼──────────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ " << (Z ? "T" : "F") << " │ "
+                     << (! (!X && Y) || (X && !Z) ? "true " : "false") << "    │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────────┘" << endl;
+}
+
+void task3_26c() {
+    cout << "\n3.26c) X || !Y && !(X || ! Z) при всех X, Y, Z:" << endl;
+    cout << "┌───┬───┬───┬──────────────────────┐" << endl;
+    cout << "│ X │ Y │ Z │ X||!Y&&!(X||!Z)      │" << endl;
+    cout << "├───┼───┼───┼──────────────────────┤" << endl;
+    
+    for (bool X : {true, false}) {
+        for (bool Y : {true, false}) {
+            for (bool Z : {true, false}) {
+                cout << "│ " << (X ? "T" : "F") << " │ " << (Y ? "T" : "F") << " │ " << (Z ? "T" : "F") << " │ "
+                     << (X || !Y && !(X || !Z) ? "true " : "false") << "    │" << endl;
+            }
+        }
+    }
+    cout << "└───┴───┴───┴──────────────────────┘" << endl;
+}
+
+// ============================================
+// СОСТАВЛЕНИЕ ЛОГИЧЕСКИХ ВЫРАЖЕНИЙ (3.27 - 3.35)
+// ============================================
+
+void task3_27() {
+    cout << "\n3.27. Логические выражения для условий:" << endl;
+    cout << "a) x > 2 && y > 3" << endl;
+    cout << "b) x > 1 || y > 2" << endl;
+    cout << "c) x <= 0 && y < 5" << endl;
+    cout << "d) x > 3 || y > 1" << endl;
+    cout << "e) x > 3 && x < 10" << endl;
+    cout << "f) !(x > 2)" << endl;
+    cout << "g) !(x > 0 && x < 5)" << endl;
+    cout << "h) x > 10 && x <= 20" << endl;
+    cout << "i) y > 0 && y <= 4 && x < 5" << endl;
+}
+
+void task3_28() {
+    cout << "\n3.28. Условия для чисел A и B:" << endl;
+    cout << "a) A > 100 && B > 100" << endl;
+    cout << "b) (A % 2 == 0) != (B % 2 == 0)  // только одно четное" << endl;
+    cout << "c) A > 0 || B > 0" << endl;
+    cout << "d) A % 3 == 0 && B % 3 == 0 && C % 3 == 0" << endl;
+    cout << "e) (A < 50) + (B < 50) + (C < 50) == 1  // только одно" << endl;
+    cout << "f) A < 0 || B < 0 || C < 0" << endl;
+}
+
+void task3_29() {
+    cout << "\n3.29. Условия для чисел X и Y:" << endl;
+    cout << "a) X % 2 != 0 && Y % 2 != 0  // оба нечетные" << endl;
+    cout << "b) (X < 20) != (Y < 20)  // только одно < 20" << endl;
+    cout << "c) X == 0 || Y == 0" << endl;
+    cout << "d) X < 0 && Y < 0 && Z < 0" << endl;
+    cout << "e) (X % 5 == 0) + (Y % 5 == 0) + (Z % 5 == 0) == 1" << endl;
+    cout << "f) X > 100 || Y > 100 || Z > 100" << endl;
+}
+
+void task3_30() {
+    cout << "\n3.30. Условия для целого A:" << endl;
+    cout << "a) A % 2 == 0 || A % 3 == 0" << endl;
+    cout << "b) A % 3 != 0 && A % 10 == 0" << endl;
+}
+
+void task3_31() {
+    cout << "\n3.31. Условия для целого N:" << endl;
+    cout << "a) N % 5 == 0 || N % 7 == 0" << endl;
+    cout << "b) N % 4 == 0 && N % 10 != 0" << endl;
+}
+
+void task3_32() {
+    cout << "\n3.32. Условия попадания точки (x, y) в заштрихованные области:" << endl;
+    cout << "a) y >= -2 && y <= 4 && x >= 0  (вертикальная полоса)" << endl;
+    cout << "b) x >= -2 && x <= 2 && y >= 0 && y <= 1. 5  (прямоугольник)" << endl;
+    cout << "c) y >= 0 && y <= 4 && x >= 0 && x <= 1  (в углу)" << endl;
+    cout << "d) y >= 2 && x >= 0 && x <= 1  (верхняя область)" << endl;
+    cout << "e) -1 <= x && x <= 1 && y >= -1  (по оси X)" << endl;
+    cout << "f) y >= 0 && y <= 1.5 && x >= -1  (полоса)" << endl;
+    cout << "g) -1 <= x && x <= 1 && y >= -2 && y <= 2  (квадрат)" << endl;
+    cout << "h) y >= 1. 5 && x >= 0 && x <= 2. 5  (треугольник)" << endl;
+}
+
+void task3_33() {
+    cout << "\n3.33. Условия для точки (x, y):" << endl;
+    cout << "a) -2 <= x && x <= 0 && y >= -1 && y <= 1" << endl;
+    cout << "b) -3 <= x && x <= 0 && y >= -1 && y <= 1" << endl;
+    cout << "c) -4 <= x && x <= -3 && y >= -1 && y <= 1" << endl;
+    cout << "d) -1 <= x && x <= 1. 5 && y >= -0.5 && y <= 1.5" << endl;
+    cout << "e) 0 <= x && x <= 1 && 2 <= y && y <= 4" << endl;
+    cout << "f) -1 <= x && x <= 1 && y >= 1. 5" << endl;
+    cout << "g) 1 <= x && x <= 2. 5 && y >= 0. 5" << endl;
+    cout << "h) 0 <= x && x <= 1 && 0 <= y && y <= 2" << endl;
+}
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+// ============================================
+// ТЕОРИЯ
+// ============================================
+void printTheory() {
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  ТЕОРИЯ:   ВЕЛИЧИНЫ ЛОГИЧЕСКОГО ТИПА       ║" << endl;
+    cout << "╚════════════════════════════════════════════╝" << endl;
+    
+    cout << "\n1. ПРОСТОЕ УСЛОВИЕ:" << endl;
+    cout << "   Операции отношения: <, >, <=, >=, ==, ! =" << endl;
+    cout << "   Результат: true (Истина) или false (Ложь)" << endl;
+    
+    cout << "\n2. СОСТАВНОЕ УСЛОВИЕ:" << endl;
+    cout << "   Логические операции: && (И), || (ИЛИ), !  (НЕ)" << endl;
+    cout << "   Приоритет: 1) !   (НЕ)  2) && (И)  3) || (ИЛИ)" << endl;
+    cout << "   Изменить: скобками ()" << endl;
+    
+    cout << "\n3. ТАБЛИЦА ИСТИННОСТИ (2 переменные):" << endl;
+    cout << "   ┌───┬───┬─────┬─────┬─────┐" << endl;
+    cout << "   │ A │ B │ A&&B│ A||B│ !A  │" << endl;
+    cout << "   ├───┼───┼─────┼─────┼─────┤" << endl;
+    cout << "   │ T │ T │  T  │  T  │  F  │" << endl;
+    cout << "   │ T │ F │  F  │  T  │  F  │" << endl;
+    cout << "   │ F │ T │  F  │  T  │  T  │" << endl;
+    cout << "   │ F │ F │  F  │  F  │  T  │" << endl;
+    cout << "   └───┴───┴─────┴─────┴─────┘" << endl;
+    
+    cout << "\n4. 2 логические величины:   2² = 4 варианта" << endl;
+    cout << "\n5. 3 логические величины:  2³ = 8 вариантов" << endl;
+}
+
+// ============================================
+// 3.34 - ШАХМАТНЫЕ ФИГУРЫ (часть 1)
+// ============================================
+
+void task3_34() {
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  3.34 ШАХМАТНЫЕ УСЛОВИЯ                    ║" << endl;
+    cout << "╚════════════════════════════════════════════╝" << endl;
+    
+    int a, b, c, d;
+    cout << "\nВведите координаты белой фигуры (a, b): ";
+    cin >> a >> b;
+    cout << "Введите координаты поля противника (c, d): ";
+    cin >> c >> d;
+    
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  РЕЗУЛЬТАТЫ                                ║" << endl;
+    cout << "╚════════════════════════════════════════════╝" << endl;
+    
+    // a) Ладья угрожает (c,d)
+    bool rook_threat = (a == c) || (b == d);
+    cout << "\na) Ладья угрожает (c,d):" << endl;
+    cout << "   Условие: a == c || b == d" << endl;
+    cout << "   Результат: " << (rook_threat ? "ДА" : "НЕТ") << endl;
+    
+    // b) Слон угрожает (c,d)
+    bool bishop_threat = (abs(a - c) == abs(b - d));
+    cout << "\nb) Слон угрожает (c,d):" << endl;
+    cout << "   Условие: abs(a-c) == abs(b-d)" << endl;
+    cout << "   Результат: " << (bishop_threat ? "ДА" : "НЕТ") << endl;
+    
+    // c) Король может одним ходом попасть на (c,d)
+    bool king_move = (abs(a - c) <= 1) && (abs(b - d) <= 1) && ! ((a == c) && (b == d));
+    cout << "\nc) Король может попасть на (c,d):" << endl;
+    cout << "   Условие: abs(a-c) <= 1 && abs(b-d) <= 1 && !(a==c && b==d)" << endl;
+    cout << "   Результат: " << (king_move ? "ДА" :  "НЕТ") << endl;
+    
+    // d) Ферзь угрожает (c,d)
+    bool queen_threat = (a == c) || (b == d) || (abs(a - c) == abs(b - d));
+    cout << "\nd) Ферзь угрожает (c,d):" << endl;
+    cout << "   Условие: a==c || b==d || abs(a-c)==abs(b-d)" << endl;
+    cout << "   Результат: " << (queen_threat ? "ДА" : "НЕТ") << endl;
+    
+    // e) Белая пешка может попасть на (c,d)
+    bool white_pawn_normal = (a == c) && (d == b + 1);
+    bool white_pawn_capture = (abs(a - c) == 1) && (d == b + 1);
+    cout << "\ne) Белая пешка может попасть на (c,d):" << endl;
+    cout << "   Обычный ход: a == c && d == b+1" << endl;
+    cout << "   Результат: " << (white_pawn_normal ? "ДА" : "НЕТ") << endl;
+    cout << "   Захват фигуры: abs(a-c)==1 && d == b+1" << endl;
+    cout << "   Результат: " << (white_pawn_capture ? "ДА" : "НЕТ") << endl;
+    
+    // f) Черная пешка может попасть на (c,d)
+    bool black_pawn_normal = (a == c) && (d == b - 1);
+    bool black_pawn_capture = (abs(a - c) == 1) && (d == b - 1);
+    cout << "\nf) Черная пешка может попасть на (c,d):" << endl;
+    cout << "   Обычный ход: a == c && d == b-1" << endl;
+    cout << "   Результат: " << (black_pawn_normal ?  "ДА" : "НЕТ") << endl;
+    cout << "   Захват фигуры: abs(a-c)==1 && d == b-1" << endl;
+    cout << "   Результат: " << (black_pawn_capture ? "ДА" : "НЕТ") << endl;
+    
+    // g) Конь угрожает (c,d)
+    bool knight_threat = ((abs(a - c) == 2 && abs(b - d) == 1) || 
+                          (abs(a - c) == 1 && abs(b - d) == 2));
+    cout << "\ng) Конь угрожает (c,d):" << endl;
+    cout << "   Условие: (abs(a-c)==2 && abs(b-d)==1) || (abs(a-c)==1 && abs(b-d)==2)" << endl;
+    cout << "   Результат: " << (knight_threat ?  "ДА" : "НЕТ") << endl;
+}
+
+// ============================================
+// 3.35 - ШАХМАТНЫЕ ДВИЖЕНИЯ (часть 2)
+// ============================================
+
+void task3_35() {
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  3.35 БЕЗОПАСНОЕ ДВИЖЕНИЕ БЕЛОЙ ФИГУРЫ    ║" << endl;
+    cout << "╚════════════════════════════════════════════╝" << endl;
+    
+    int a, b, c, d, e, f;
+    cout << "\nВведите координаты белой фигуры (a, b): ";
+    cin >> a >> b;
+    cout << "Введите координаты черной фигуры (c, d): ";
+    cin >> c >> d;
+    cout << "Введите целевую позицию (e, f): ";
+    cin >> e >> f;
+    
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  РЕЗУЛЬТАТЫ ПРОВЕРКИ                       ║" << endl;
+    cout << "╚════════════════════════════════════════════╝" << endl;
+    
+    // Вспомогательные функции для проверки ходов
+    auto rook_can_move = [](int x1, int y1, int x2, int y2) {
+        return (x1 == x2) || (y1 == y2);
+    };
+    
+    auto bishop_can_move = [](int x1, int y1, int x2, int y2) {
+        return abs(x1 - x2) == abs(y1 - y2);
+    };
+    
+    auto queen_can_move = [](int x1, int y1, int x2, int y2) {
+        return (x1 == x2) || (y1 == y2) || (abs(x1 - x2) == abs(y1 - y2));
+    };
+    
+    auto knight_can_move = [](int x1, int y1, int x2, int y2) {
+        return ((abs(x1 - x2) == 2 && abs(y1 - y2) == 1) || 
+                (abs(x1 - x2) == 1 && abs(y1 - y2) == 2));
+    };
+    
+    auto path_clear = [](int x1, int y1, int x2, int y2, int cx, int cy) {
+        // Проверяет, не блокирует ли фигура на (cx, cy) путь от (x1,y1) к (x2,y2)
+        if ((x1 == x2) && (x1 == cx)) {
+            // Одна вертикаль
+            int min_y = min(y1, y2);
+            int max_y = max(y1, y2);
+            return cy <= min_y || cy >= max_y;
+        } else if ((y1 == y2) && (y1 == cy)) {
+            // Одна горизонталь
+            int min_x = min(x1, x2);
+            int max_x = max(x1, x2);
+            return cx <= min_x || cx >= max_x;
+        } else if (abs(x1 - x2) == abs(y1 - y2)) {
+            // Диагональ
+            int steps = abs(x1 - x2);
+            int dx = (x2 > x1) ? 1 : -1;
+            int dy = (y2 > y1) ? 1 : -1;
+            
+            for (int i = 1; i < steps; i++) {
+                if (x1 + i * dx == cx && y1 + i * dy == cy) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return true;
+    };
+    
+    // a) Ладья и Ладья
+    cout << "\na) ЛАДЬЯ и ЛАДЬЯ:" << endl;
+    bool white_can_move = rook_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    bool black_controls = rook_can_move(c, d, e, f);
+    bool safe = white_can_move && ! black_controls;
+    cout << "   Белая может ходить: " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черная контролирует (e,f): " << (black_controls ? "ДА" :  "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // b) Ладья и Ферзь
+    cout << "\nb) ЛАДЬЯ и ФЕРЗЬ:" << endl;
+    white_can_move = rook_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = queen_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белая ладья может ходить: " << (white_can_move ?  "ДА" : "НЕТ") << endl;
+    cout << "   Черный ферзь контролирует (e,f): " << (black_controls ? "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" :  "НЕТ") << endl;
+    
+    // c) Ладья и Конь
+    cout << "\nc) ЛАДЬЯ и КОНЬ:" << endl;
+    white_can_move = rook_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = knight_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белая ладья может ходить: " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черный конь контролирует (e,f): " << (black_controls ? "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // d) Ладья и Слон
+    cout << "\nd) ЛАДЬЯ и СЛОН:" << endl;
+    white_can_move = rook_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = bishop_can_move(c, d, e, f);
+    safe = white_can_move && !black_controls;
+    cout << "   Белая ладья может ходить:  " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черный слон кон��ролирует (e,f): " << (black_controls ? "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // e) Ферзь и Ферзь
+    cout << "\ne) ФЕРЗЬ и ФЕРЗЬ:" << endl;
+    white_can_move = queen_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = queen_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белый ферзь может ходить: " << (white_can_move ? "ДА" :  "НЕТ") << endl;
+    cout << "   Черный ферзь контролирует (e,f): " << (black_controls ? "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" :  "НЕТ") << endl;
+    
+    // f) Ферзь и Ладья
+    cout << "\nf) ФЕРЗЬ и ЛАДЬЯ:" << endl;
+    white_can_move = queen_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = rook_can_move(c, d, e, f);
+    safe = white_can_move && !black_controls;
+    cout << "   Белый ферзь может ходить: " << (white_can_move ?  "ДА" : "НЕТ") << endl;
+    cout << "   Черная ладья контролирует (e,f): " << (black_controls ? "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // g) Ферзь и Конь
+    cout << "\ng) ФЕРЗЬ и КОНЬ:" << endl;
+    white_can_move = queen_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = knight_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белый ферзь может ходить: " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черный конь контролирует (e,f): " << (black_controls ? "ДА" :  "НЕТ") << endl;
+    cout << "   Ход безопасен:  " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // h) Ферзь и Слон
+    cout << "\nh) ФЕРЗЬ и СЛОН:" << endl;
+    white_can_move = queen_can_move(a, b, e, f) && path_clear(a, b, e, f, c, d);
+    black_controls = bishop_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белый ферзь может ходить: " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черный слон контролирует (e,f): " << (black_controls ? "ДА" :  "НЕТ") << endl;
+    cout << "   Ход безопасен:  " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // i) Конь и Конь
+    cout << "\ni) КОНЬ �� КОНЬ:" << endl;
+    white_can_move = knight_can_move(a, b, e, f);
+    black_controls = knight_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белый конь может ходить: " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черный конь контролирует (e,f): " << (black_controls ?  "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" : "НЕТ") << endl;
+    
+    // j) Конь и Ладья
+    cout << "\nj) КОНЬ и ЛАДЬЯ:" << endl;
+    white_can_move = knight_can_move(a, b, e, f);
+    black_controls = rook_can_move(c, d, e, f);
+    safe = white_can_move && ! black_controls;
+    cout << "   Белый конь может ходить: " << (white_can_move ? "ДА" : "НЕТ") << endl;
+    cout << "   Черная ладья контролирует (e,f): " << (black_controls ? "ДА" : "НЕТ") << endl;
+    cout << "   Ход безопасен: " << (safe ? "ДА" : "НЕТ") << endl;
+}
+
+// ============================================
+// ДЕМОНСТРАЦИОННЫЙ КОД ДЛЯ ОСНОВНЫХ ЗАДАЧ
+// ============================================
+
+void demo_task_3_1() {
+    cout << "\n3.1. A=T, B=F, C=F" << endl;
+    bool A = true, B = false, C = false;
+    
+    cout << "a) A || B = " << (A || B ? "true" : "false") << endl;
+    cout << "b) A && B = " << (A && B ? "true" : "false") << endl;
+    cout << "c) B || C = " << (B || C ? "true" : "false") << endl;
+}
+
+void demo_task_3_13a() {
+    cout << "\n3.13a) !(A && B) при всех A, B:" << endl;
+    cout << "┌───┬───┬────────────┐" << endl;
+    cout << "│ A │ B │ !(A && B)  │" << endl;
+    cout << "├───┼───┼────────────┤" << endl;
+    
+    for (bool A :  {true, false}) {
+        for (bool B : {true, false}) {
+            cout << "│ " << (A ?  "T" : "F") << " │ " << (B ? "T" : "F") << " │ "
+                 << (!(A && B) ? "true " : "false") << "   │" << endl;
+        }
+    }
+    cout << "└───┴───┴───────���────┘" << endl;
+}
+
+void demo_task_3_27() {
+    cout << "\n3.27. Логические выражения для условий:" << endl;
+    cout << "a) x > 2 && y > 3" << endl;
+    cout << "b) x > 1 || y > 2" << endl;
+    cout << "c) x <= 0 && y < 5" << endl;
+    cout << "d) x > 3 || y > 1" << endl;
+    cout << "e) x > 3 && x < 10" << endl;
+    cout << "f) !(x > 2)" << endl;
+    cout << "g) !(x > 0 && x < 5)" << endl;
+    cout << "h) x > 10 && x <= 20" << endl;
+    cout << "i) y > 0 && y <= 4 && x < 5" << endl;
+}
+
+void demo_task_3_34_summary() {
+    cout << "\n╔════════════════════════════════════════════╗" << endl;
+    cout << "║  3.34 ШАХМАТНЫЕ УСЛОВИЯ (СПРАВКА)         ║" << endl;
+    cout << "╚════════════════════════��═══════════════════╝" << endl;
+    
+    cout << "\na) Ладья угрожает (c,d):" << endl;
+    cout << "   a == c || b == d" << endl;
+    
+    cout << "\nb) Слон угрожает (c,d):" << endl;
+    cout << "   abs(a-c) == abs(b-d)" << endl;
+    
+    cout << "\nc) Король может попасть (c,d):" << endl;
+    cout << "   abs(a-c) <= 1 && abs(b-d) <= 1 && !(a==c && b==d)" << endl;
+    
+    cout << "\nd) Ферзь угрожает (c,d):" << endl;
+    cout << "   a==c || b==d || abs(a-c)==abs(b-d)" << endl;
+    
+    cout << "\ne) Белая пешка ходит (c,d):" << endl;
+    cout << "   Обычно:   a==c && d==b+1" << endl;
+    cout << "   Захват:   abs(a-c)==1 && d==b+1" << endl;
+    
+    cout << "\nf) Черная пешка ходит (c,d):" << endl;
+    cout << "   Обычно:  a==c && d==b-1" << endl;
+    cout << "   Захват:  abs(a-c)==1 && d==b-1" << endl;
+    
+    cout << "\ng) Конь угрожает (c,d):" << endl;
+    cout << "   (abs(a-c)==2 && abs(b-d)==1) || (abs(a-c)==1 && abs(b-d)==2)" << endl;
+}
+
+// ============================================
+// ГЛАВНОЕ МЕНЮ
+// ============================================
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    
+    int choice;
+    
+    while (true) {
+        cout << "\n╔════════════════════════════════════════╗" << endl;
+        cout << "║  ГЛАВА 3: ВЕЛИЧИНЫ ЛОГИЧЕСКОГО ТИПА   ║" << endl;
+        cout << "╚════════════════════════════════════════╝" << endl;
+        
+        cout << "\n0.   Теория" << endl;
+        cout << "1.  Демо:  Задача 3.1" << endl;
+        cout << "13.  Демо: Задача 3.13a (таблица истинности)" << endl;
+        cout << "27. Демо:  Задача 3.27 (логические выражения)" << endl;
+        cout << "34.  ЗАДАЧА 3.34 (Шахматные фигуры - часть 1)" << endl;
+        cout << "35. ЗАДАЧА 3.35 (Безопасное движение - часть 2)" << endl;
+        cout << "99.  Выход" << endl;
+        
+        cout << "\nВыберите (0, 1, 13, 27, 34, 35, 99): ";
+        cin >> choice;
+        
+        switch (choice) {
+            case 0:
+                printTheory();
+                break;
+            case 1:
+                demo_task_3_1();
+                break;
+            case 13:
+                demo_task_3_13a();
+                break;
+            case 27:
+                demo_task_3_27();
+                break;
+            case 34:
+                task3_34();
+                break;
+            case 35:
+                task3_35();
+                break;
+            case 99:
+                cout << "\nДо встречи!  👋" << endl;
+                return 0;
+            default:
+                cout << "\n❌ Неверный выбор!" << endl;
+        }
+        
+        cout << "\nНажмите Enter для продолжения... ";
+        cin.ignore();
+        cin.ignore();
+    }
+    
+    return 0;
+}
