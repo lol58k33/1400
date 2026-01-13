@@ -1,0 +1,94 @@
+#include <iostream>
+using namespace std;
+
+// Задача 1.59
+void swapTwoValues() {
+    int x, y;
+    cout << "Введите два числа: ";
+    cin >> x >> y;
+    // Обмен значений через временную переменную
+    int temp = x;
+    x = y;
+    y = temp;
+    cout << "После обмена: x = " << x << ", y = " << y << endl;
+}
+
+// Задача 1.60
+void swapThreeValues() {
+    int a, b, c;
+    cout << "Введите три числа: ";
+    cin >> a >> b >> c;
+
+    // a) b присвоить c, a присвоить b, c присвоить a
+    int tempA = a, tempB = b, tempC = c;
+    b = tempC;
+    a = tempB;
+    c = tempA;
+    cout << "Схема а) a = " << a << ", b = " << b << ", c = " << c << endl;
+
+    // б) b присвоить a, c присвоить b, a присвоить c
+    a = tempA, b = tempB, c = tempC; // Возвращаем начальные значения
+    int temp = b;
+    b = a;
+    c = temp;
+    a = c;
+    cout << "Схема б) a = " << a << ", b = " << b << ", c = " << c << endl;
+}
+
+// Задача 1.61
+void multiplyForRealNumbers() {
+    double a;
+    cout << "Введите вещественное число: ";
+    cin >> a;
+
+    cout << "4a = " << (a * 4) << endl;
+    cout << "6a = " << (a * 3 * 2) << endl;
+    cout << "7a = " << (a * 4 + 3) << endl;
+    cout << "8a = " << ((a * 4) * 2) << endl;
+    cout << "9a = " << ((a * 3) + (a * 6)) << endl;
+    cout << "10a = " << ((a * 4) + (a * 6)) << endl;
+    cout << "13a = " << (a * 10 + (a * 3)) << endl;
+    cout << "15a = " << (a * 14 + a) << endl;
+    cout << "21a = " << (a * 7 * 3) << endl;
+    cout << "28a = " << (a * 14 * 2) << endl;
+    cout << "64a = " << (a * (a * 2 * 3)) << endl;
+}
+
+// Задача 1.62
+void multipleRealNumbers() {
+    double a;
+    cout << "Введите вещественное число: ";
+    cin >> a;
+
+    cout << "3a = " << (a * 3) << ", 10a = " << (a * 10) << endl;
+    cout << "4a = " << (a * 4) << ", 20a = " << (a * 4 * 5) << endl;
+    cout << "5a = " << (a * 5) << ", 13a = " << ((a * 10) + (3 * a)) << endl;
+    cout << "5a = " << (a * 5) << ", 19a = " << ((a * 20) - a) << endl;
+    cout << "2a = " << (a * 2) << ", 5a = " << (a * 5) << ", 17a = " << ((a * 18) - a) << endl;
+    cout << "4a = " << (a * 4) << ", 12a = " << (a * 12) << ", 28a = " << (4 * 7 * a) << endl;
+}
+
+int main() {
+    int option;
+    cout << "Выберите задачу (1 - 59, 2 - 60, 3 - 61, 4 - 62): ";
+    cin >> option;
+
+    switch (option) {
+        case 1:
+            swapTwoValues();
+            break;
+        case 2:
+            swapThreeValues();
+            break;
+        case 3:
+            multiplyForRealNumbers();
+            break;
+        case 4:
+            multipleRealNumbers();
+            break;
+        default:
+            cout << "Неверный ввод." << endl;
+    }
+
+    return 0;
+}
